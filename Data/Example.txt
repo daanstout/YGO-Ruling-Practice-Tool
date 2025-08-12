@@ -1,0 +1,35 @@
+{
+    "question_identifier": "identifier",
+    "title": "title",
+    "cards_used": [
+        1,
+        2,
+        3
+    ],
+    "tags":[],
+    "problem_type": "",
+    "prompt": "prompt",
+    "answers": [
+        {
+            "answer_identifier": "id 1",
+            "prompt": "answer 1",
+            "is_correct": true,
+            "reasoning": "reason"
+        },
+        {
+            "answer_identifier": "id 2",
+            "prompt": "answer 2",
+            "is_correct": false,
+            "reasoning": "reason"
+        },
+        {
+            "answer_identifier": "id 2",
+            "prompt": "answer 3",
+            "is_correct": false,
+            "reasoning": "reason"
+        }
+    ],
+    "added_by": "added_by",
+    "author": "author",
+    "source": "source"
+}

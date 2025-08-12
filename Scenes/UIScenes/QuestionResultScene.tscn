@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctkqfptrxhdo6"]
+
+[ext_resource type="Script" uid="uid://dlu05qf0xfn0g" path="res://Scripts/UI/QuestionResultPanel.cs" id="1_acpdy"]
+[ext_resource type="PackedScene" uid="uid://c5rr58i4gliyh" path="res://Scenes/UIScenes/AnswerPanelScene.tscn" id="2_nlex7"]
+[ext_resource type="LabelSettings" uid="uid://dkbut5n15sp2x" path="res://SettingObjects/DefaultLabelSettings.tres" id="3_jmsjr"]
+
+[node name="QuestionResult" type="PanelContainer" node_paths=PackedStringArray("QuestionTitleLabel", "QuestionResultLabel", "CollapseButton", "Contents", "QuestionPromptLabel", "CorrectAnswersVBoxContainer", "IncorrectAnswersVBoxContainer", "CorrectAnswersForQuestionVBoxContainer", "UserSubmittedAnswersVBoxContainer", "UserSubmittedAnswerLabel")]
+offset_right = 860.0
+offset_bottom = 200.0
+script = ExtResource("1_acpdy")
+QuestionTitleLabel = NodePath("VBoxContainer/HBoxContainer/TitleLabel")
+QuestionResultLabel = NodePath("VBoxContainer/HBoxContainer/CorrectLabel")
+CollapseButton = NodePath("VBoxContainer/HBoxContainer/CollapseButton")
+Contents = NodePath("VBoxContainer/VBoxContainer")
+QuestionPromptLabel = NodePath("VBoxContainer/VBoxContainer/QuestionPromptLine/QuestionPromptLabel")
+AnswerPackedScene = ExtResource("2_nlex7")
+CorrectAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/CorrectVBoxContainer")
+IncorrectAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer")
+CorrectAnswersForQuestionVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer/CorrectAnswersVBoxContainer")
+UserSubmittedAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer/UserSubmittedAnswersVBoxContainer")
+UserSubmittedAnswerLabel = NodePath("VBoxContainer/VBoxContainer/UserSubmittedAnswerLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "Title"
+
+[node name="CorrectLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "Correct"
+
+[node name="CollapseButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Collapse"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="QuestionPromptLine" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuestionPrompt" type="Label" parent="VBoxContainer/VBoxContainer/QuestionPromptLine"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Prompt"
+label_settings = ExtResource("3_jmsjr")
+
+[node name="QuestionPromptLabel" type="Label" parent="VBoxContainer/VBoxContainer/QuestionPromptLine"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+size_flags_horizontal = 3
+label_settings = ExtResource("3_jmsjr")
+autowrap_mode = 2
+
+[node name="CorrectVBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="IncorrectVBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/IncorrectVBoxContainer"]
+layout_mode = 2
+text = "Correct"
+
+[node name="CorrectAnswersVBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/IncorrectVBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer/IncorrectVBoxContainer"]
+layout_mode = 2
+text = "Submitted"
+
+[node name="UserSubmittedAnswersVBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/IncorrectVBoxContainer"]
+layout_mode = 2
+
+[node name="UserSubmittedAnswerLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 23)
+layout_mode = 2
+autowrap_mode = 2

@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=3 uid="uid://byb1o8br6tot7"]
+
+[ext_resource type="Script" uid="uid://b4v3ur0o8yarv" path="res://Scripts/UI/MonsterCardPanel.cs" id="1_trfpf"]
+[ext_resource type="PackedScene" uid="uid://egjo2t5brhal" path="res://Scenes/UIScenes/EffectScene.tscn" id="2_c0lg5"]
+[ext_resource type="LabelSettings" uid="uid://dkbut5n15sp2x" path="res://SettingObjects/DefaultLabelSettings.tres" id="3_ilbb6"]
+[ext_resource type="Script" uid="uid://bvvmdputk5wlt" path="res://Scripts/UI/AutoSizedLabel.gd" id="4_nivdl"]
+
+[node name="MonsterCardPanel" type="PanelContainer" node_paths=PackedStringArray("CardNameLabel", "CardLevelLabel", "AttributeLabel", "TypeLabel", "ModifierLabel", "AttackLabel", "DefenseLabel", "EffectParent")]
+offset_right = 200.0
+offset_bottom = 200.0
+script = ExtResource("1_trfpf")
+CardNameLabel = NodePath("VBoxContainer/NameRow/CardNameLabel")
+CardLevelLabel = NodePath("VBoxContainer/TypeLevelRow/LevelLabel")
+AttributeLabel = NodePath("VBoxContainer/AttributeTypeRow/AttributeLabel")
+TypeLabel = NodePath("VBoxContainer/AttributeTypeRow/TypeLabel")
+ModifierLabel = NodePath("VBoxContainer/AttributeTypeRow/ModifierLabel")
+AttackLabel = NodePath("VBoxContainer/CombatStatsRow/AttackLabel")
+DefenseLabel = NodePath("VBoxContainer/CombatStatsRow/DefenseLabel")
+EffectScene = ExtResource("2_c0lg5")
+EffectParent = NodePath("VBoxContainer/EffectsRow")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 2
+
+[node name="NameRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="CardNameLabel" type="Label" parent="VBoxContainer/NameRow"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Amo no Murakumo no Mitsurugi"
+label_settings = ExtResource("3_ilbb6")
+text_overrun_behavior = 2
+script = ExtResource("4_nivdl")
+
+[node name="TypeLevelRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MonsterLabel" type="Label" parent="VBoxContainer/TypeLevelRow"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Monster"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="Label" type="Label" parent="VBoxContainer/TypeLevelRow"]
+layout_mode = 2
+text = "- Level"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer/TypeLevelRow"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "8"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="AttributeTypeRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AttributeLabel" type="Label" parent="VBoxContainer/AttributeTypeRow"]
+layout_mode = 2
+text = "Dark"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="Label" type="Label" parent="VBoxContainer/AttributeTypeRow"]
+layout_mode = 2
+text = "/"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="TypeLabel" type="Label" parent="VBoxContainer/AttributeTypeRow"]
+layout_mode = 2
+text = "Reptile"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="Label2" type="Label" parent="VBoxContainer/AttributeTypeRow"]
+layout_mode = 2
+text = "/"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="ModifierLabel" type="Label" parent="VBoxContainer/AttributeTypeRow"]
+layout_mode = 2
+text = "Effect / Ritual"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="CombatStatsRow" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="AttackLabel" type="Label" parent="VBoxContainer/CombatStatsRow"]
+layout_mode = 2
+text = "3200"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="Label3" type="Label" parent="VBoxContainer/CombatStatsRow"]
+layout_mode = 2
+text = "/"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="DefenseLabel" type="Label" parent="VBoxContainer/CombatStatsRow"]
+layout_mode = 2
+text = "800"
+label_settings = ExtResource("3_ilbb6")
+
+[node name="EffectsRow" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2

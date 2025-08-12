@@ -1,0 +1,55 @@
+[
+    {
+        "name": "",
+        "card_type": "Monster",
+        "attribute": "",
+        "type": "",
+        "level": 0,
+        "attack": 0,
+        "defense": 0,
+        "sub_types": "",
+        "effects": [
+            {
+                "condition": "",
+                "activation": "",
+                "effect": "",
+                "bullets": [
+
+                ]
+            }
+        ],
+        "code": 0
+    },
+    {
+        "name": "",
+        "card_type": "Spell",
+        "spell_trap_type": "",
+        "effects": [
+            {
+                "condition": "",
+                "activation": "",
+                "effect": "",
+                "bullets": [
+
+                ]
+            }
+        ],
+        "code": 0
+    },
+    {
+        "name": "",
+        "card_type": "Trap",
+        "spell_trap_type": "",
+        "effects": [
+            {
+                "condition": "",
+                "activation": "",
+                "effect": "",
+                "bullets": [
+
+                ]
+            }
+        ],
+        "code": 0
+    }
+]

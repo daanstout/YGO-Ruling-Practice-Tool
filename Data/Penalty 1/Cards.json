@@ -1,0 +1,57 @@
+[
+    {
+        "name": "Pot of Desires",
+        "card_type": "Spell",
+        "spell_trap_type": "Normal",
+        "effects": [
+            {
+                "activation": "Banish 10 cards from the top of your Deck, face-down",
+                "effect": "draw 2 Cards"
+            },
+            {
+                "effect": "You can only activate 1 \"Pot of Desires\" per turn."
+            }
+        ],
+        "code": 35261759
+    },
+    {
+        "name": "Pot of Extravagance",
+        "card_type": "Spell",
+        "spell_trap_type": "Normal",
+        "effects": [
+            {
+                "condition": "At the start of your Main Phase 1",
+                "activation": "Banish 3 or 6 random face-down cards from your Extra Deck, face-down",
+                "effect": "draw 1 card for every 3 cards banished."
+            },
+            {
+                "effect": "For the rest of this turn after this card resolves, you cannot draw any cards by card effects."
+            }
+        ],
+        "code": 49238328
+    },
+    {
+        "name": "Gladiator Beast Heraklinos",
+        "card_type": "Monster",
+        "attribute": "Fire",
+        "type": "Beast-Warrior",
+        "level": 8,
+        "attack": 3000,
+        "defense": 2800,
+        "sub_types": "Fusion, Effect",
+        "effects": [
+            {
+                "effect": "\"Gladiator Beast Laquari\" + 2 \"Gladiator Beast\" Monsters"
+            },
+            {
+                "effect": "Must first be Special Summoned (from your Extra Deck) by shuffling the above cards you control into the Deck."
+            },
+            {
+                "condition": "When a Spell/trap Card is activated (Quick Effect)",
+                "activation": "You can discard 1 card",
+                "effect": "negate the activation, and if you do, destroy it. This card must be face-up on the field to activate and to resolve this effect."
+            }
+        ],
+        "code": 27346636
+    }
+]

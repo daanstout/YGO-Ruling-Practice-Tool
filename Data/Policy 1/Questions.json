@@ -1,0 +1,41 @@
+[
+    {
+        "question_identifier": "daan:policy1:pole_position_loop",
+        "title": "Infinite Loops: Pole Position",
+        "cards_used": [
+            46986414,
+            73578229,
+            67227834,
+            38033121,
+            40619825
+        ],
+        "tags": [
+            "loops"
+        ],
+        "problem_type": "Infinite Loops",
+        "prompt": "{PLAYER_1} controls a {Dark Magician} equipped with a {Magic Formula} and a set card. {PLAYER_2} controls a {Dark Magician Girl} equipped with an {Axe of Despair}. {PLAYER_1} activates their set {Pole Position}. Since {Dark Magician} has the most ATK, it becomes unaffected by spell cards due to {Pole Position}'s effect. Now, {Dark Magician Girl} has the most ATK, so it becomes unaffected by spell cards due to {Pole Position}'s effect, and {Dark Magician} once again becomes affected by spell cards. Then, {Dark Magician} becomes unaffected once again. The players correctly identify this as an infinite loop, and you get called to the table. How do you resolve the call.",
+        "answers": [
+            {
+                "answer_identifier": "daan:policy1:pole_position_loop:1",
+                "prompt": "Since this infinite loop will not result in a victory for either player, the infinite loop should be stopped by sending the card most responsible to the GY. In this case, that is {Pole Position}.",
+                "is_correct": true,
+                "reasoning": "It is allowed to intentionally start an infinite loop as a player, at which point a judge should be called to solve it. This is so that a player cannot be locked out of taking an action (sometimes even actions required by the game, such as drawing during your draw phase). To solve the infinite loop, the card most at fault should be determined, and then send to the GY. In this case, that is {Pole Position}."
+            },
+            {
+                "answer_identifier": "daan:policy1:pole_position_loop:2",
+                "prompt": "It is not allowed to activate a card that upon resolution will create an infinite loop. The game should be rewound to before {Pole Position} was activated, and {PLAYER_1} should be given a PE: Minor.",
+                "is_correct": false,
+                "reasoning": "It is allowed to intentionally start an infinite loop as a player. This is so that a player cannot be locked out of taking certain game actions, such as activating cards or drawing during the draw phase."
+            },
+            {
+                "answer_identifier": "daan:policy1:pole_position_loop:3",
+                "prompt": "Since this infinite loop will not result in a victory for either player, the infinite loop should be stopped by sending the card most responsible to the GY. In this case, that is {Magic Formula}.",
+                "is_correct": false,
+                "reasoning": "It is allowed to intentionally start an infinite loop as a player, at which point a judge should be called to solve it. This is so that a player cannot be locked out of taking an action (sometimes even actions required by the game, such as drawing during your draw phase). To solve the infinite loop, the card most at fault should be determined, and then send to the GY. In this case, that is {Pole Position}, since it is causing the monsters to be unaffected by spell cards. {Magic Formula} isn't itself causing the infinite loop."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Konami",
+        "source": "KDE-E TCG Tournament Policy V2.1"
+    }
+]

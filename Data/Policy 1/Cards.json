@@ -1,0 +1,78 @@
+[
+    {
+        "name": "Dark Magician",
+        "card_type": "Monster",
+        "attribute": "Dark",
+        "type": "Spellcaster",
+        "level": 7,
+        "attack": 2500,
+        "defense": 2100,
+        "sub_types": "Normal",
+        "effects": [],
+        "code": 46986414
+    },
+    {
+        "name": "Pole Position",
+        "card_type": "Trap",
+        "spell_trap_type": "Continuous",
+        "effects": [
+            {
+                "effect": "The face-up monster(s) with the highest ATK on the field is unaffected by the effects of Spell Cards."
+            },
+            {
+                "effect": "When \"Pole Position\" is removed from the field, destroy the face-up monster(s) with the highest ATk on the field."
+            }
+        ],
+        "code": 73578229
+    },
+    {
+        "name": "Magic Formula",
+        "card_type": "Spell",
+        "spell_trap_type": "Equip",
+        "effects": [
+            {
+                "effect": "Equip only to a \"Dark Magician\" or \"Dark Magician Girl\". It gains 700 ATK."
+            },
+            {
+                "condition": "If this card is sent from the field to the GY",
+                "effect": "Gain 1000 LP."
+            }
+        ],
+        "code": 67227834
+    },
+    {
+        "name": "Dark Magician Girl",
+        "card_type": "Monster",
+        "attribute": "Dark",
+        "type": "Spellcaster",
+        "level": 6,
+        "attack": 2000,
+        "defense": 1700,
+        "sub_types": "Effect",
+        "effects": [
+            {
+                "effect": "Gains 300 ATK for every \"Dark Magician\" or \"Magician of Black Chaos\" in the GYs."
+            }
+        ],
+        "code": 38033121
+    },
+    {
+        "name": "Axe of Despair",
+        "card_type": "Spell",
+        "spell_trap_type": "Equip",
+        "effects": [
+            {
+                "effect": "(This card is always treated as an \"Archfiend\" card.)"
+            },
+            {
+                "effect": "The equipped monster gains 1000 ATK."
+            },
+            {
+                "condition": "When this card is sent from the field to the GY",
+                "activation": "You can Tribute 1 monster",
+                "effect": "place this card on the top of your deck."
+            }
+        ],
+        "code": 40619825
+    }
+]

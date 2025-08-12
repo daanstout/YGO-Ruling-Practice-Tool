@@ -1,0 +1,156 @@
+[
+	{
+		"name": "Amo no Murakumo no Mitsurugi",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Reptile",
+		"level": 8,
+		"attack": 3200,
+		"defense": 800,
+		"sub_types": "Effect, Ritual",
+		"effects": [
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
+			},
+			{
+				"condition": "If this card is Special Summoned",
+				"activation": "",
+				"effect": "You can destroy all monsters your opponent controls."
+			},
+			{
+				"condition": "When your opponent activates a card or effect (Quick Effect)",
+				"activation": "You can activate this effect",
+				"effect": "your opponent can discard 1 card, or that effect is negated."
+			},
+			{
+				"condition": "If this card is Tributed",
+				"activation": "",
+				"effect": "You can add 1 \"Mitsurugi\" card from your Deck to your hand, except \"Ame no Murakumo no Mitsurugi\", then you can Special Summon this card."
+			},
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can only use each effect of \"Amo no Murakumo no Mitsurugi\" once per turn."
+			}
+		],
+		"code": 19899073
+	},
+	{
+		"name": "Droll & Lock Bird",
+		"card_type": "Monster",
+		"attribute": "Wind",
+		"type": "Spellcaster",
+		"level": 1,
+		"attack": 0,
+		"defense": 0,
+		"sub_types": "Effect",
+		"effects": [
+			{
+				"condition": "If a card(s) is added from the Main Deck to your opponent's hand, except during the Draw Phase (Quick Effect)",
+				"activation": "You can send this card from your hand to the GY",
+				"effect": "for the rest of this turn, cards cannot be added from either player's Main Deck to the hand."
+			}
+		],
+		"code": 94145021
+	},
+	{
+		"name": "Mitsurugi Prayers",
+		"card_type": "spell",
+		"spell_trap_type": "Quick-Play",
+		"effects": [
+			{
+				"condition": "",
+				"activation": "When you activate this card, you can also Tribute 1 Reptile monster in your hand or field",
+				"effect": "Apply 1 of these effects, or if you tributed a monster at activation, you can apply both effects in sequence.",
+				"bullets": [
+					"Add 1 \"Mitsurugi\" monster from your Deck to your hand.",
+					"Take 800 damage, then you can Special Summon 1 \"Mitsurugi\" monster from your hand or GY, but it cannot attack directly."
+				]
+			},
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can only activate 1 \"Mitsurugi Prayers\" per turn."
+			}
+		],
+		"code": 45171524
+	},
+	{
+		"name": "Amo no Murakumo no Mitsurugi",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Reptile",
+		"level": 8,
+		"attack": 3200,
+		"defense": 800,
+		"sub_types": "Effect, Ritual",
+		"effects": [
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
+			},
+			{
+				"condition": "If this card is Special Summoned",
+				"activation": "",
+				"effect": "You can destroy all monsters your opponent controls."
+			},
+			{
+				"condition": "When your opponent activates a card or effect (Quick Effect)",
+				"activation": "You can activate this effect",
+				"effect": "your opponent can discard 1 card, or that effect is negated."
+			},
+			{
+				"condition": "If this card is Tributed",
+				"activation": "",
+				"effect": "You can add 1 \"Mitsurugi\" card from your Deck to your hand, except \"Ame no Murakumo no Mitsurugi\", then you can Special Summon this card."
+			},
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can only use each effect of \"Amo no Murakumo no Mitsurugi\" once per turn."
+			}
+		],
+		"code": 19899074
+	},
+	{
+		"name": "Amo no Murakumo no Mitsurugi",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Reptile",
+		"level": 8,
+		"attack": 3200,
+		"defense": 800,
+		"sub_types": "Effect, Ritual",
+		"effects": [
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
+			},
+			{
+				"condition": "If this card is Special Summoned",
+				"activation": "",
+				"effect": "You can destroy all monsters your opponent controls."
+			},
+			{
+				"condition": "When your opponent activates a card or effect (Quick Effect)",
+				"activation": "You can activate this effect",
+				"effect": "your opponent can discard 1 card, or that effect is negated."
+			},
+			{
+				"condition": "If this card is Tributed",
+				"activation": "",
+				"effect": "You can add 1 \"Mitsurugi\" card from your Deck to your hand, except \"Ame no Murakumo no Mitsurugi\", then you can Special Summon this card."
+			},
+			{
+				"condition": "",
+				"activation": "",
+				"effect": "You can only use each effect of \"Amo no Murakumo no Mitsurugi\" once per turn."
+			}
+		],
+		"code": 19899075
+	}
+]

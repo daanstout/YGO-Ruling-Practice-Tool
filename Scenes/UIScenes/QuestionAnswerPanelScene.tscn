@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp5grx0upxoef"]
+
+[ext_resource type="Script" uid="uid://bs782sqrn8te" path="res://Scripts/UI/QuestionAnswerPanel.cs" id="1_y65gc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y65gc"]
+
+[node name="QuestionAnswerPanel" type="PanelContainer" node_paths=PackedStringArray("AnswerCheckBox", "AnswerLabel")]
+custom_minimum_size = Vector2(880, 50)
+offset_right = 880.0
+offset_bottom = 50.0
+script = ExtResource("1_y65gc")
+AnswerCheckBox = NodePath("HBoxContainer/AnswerCheckBox")
+AnswerLabel = NodePath("HBoxContainer/AnswerLabel")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="AnswerCheckBox" type="CheckBox" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_y65gc")
+
+[node name="AnswerLabel" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+autowrap_mode = 2

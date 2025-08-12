@@ -1,0 +1,343 @@
+[gd_scene load_steps=12 format=3 uid="uid://ey3uhu3gtemx"]
+
+[ext_resource type="PackedScene" uid="uid://byb1o8br6tot7" path="res://Scenes/UIScenes/MonsterCardPanel.tscn" id="1_fkxdt"]
+[ext_resource type="Script" uid="uid://vlnea6tjbcpi" path="res://Scripts/UI/PracticeTool.cs" id="2_i1dj8"]
+[ext_resource type="Script" uid="uid://d3or8x1ksld2k" path="res://Scripts/UI/HeaderPanel.cs" id="2_jw32o"]
+[ext_resource type="Script" uid="uid://b16rn54rm7w7f" path="res://Scripts/UI/CardContainer.cs" id="2_rgh2o"]
+[ext_resource type="Script" uid="uid://c5ya8dxyhc1w1" path="res://Scripts/UI/RunInfoPanel.cs" id="3_50glp"]
+[ext_resource type="Script" uid="uid://15kw42qnrwvy" path="res://Scripts/UI/QuestionPanel.cs" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://dp5grx0upxoef" path="res://Scenes/UIScenes/QuestionAnswerPanelScene.tscn" id="4_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://dto32spxjkfk1" path="res://Scenes/UIScenes/SpellTrapCardPanel.tscn" id="4_v1gob"]
+[ext_resource type="Script" uid="uid://b5mxel703ecis" path="res://Scripts/UI/MainViewPanel.cs" id="7_bmxlf"]
+[ext_resource type="Script" uid="uid://b021pu2ltq2h5" path="res://Scripts/UI/ResultsPanel.cs" id="10_4kpch"]
+[ext_resource type="PackedScene" uid="uid://ctkqfptrxhdo6" path="res://Scenes/UIScenes/QuestionResultScene.tscn" id="11_4kpch"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screen" type="Panel" parent="." node_paths=PackedStringArray("CardContainer", "QuestionPanel", "ResultsPanel")]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+script = ExtResource("2_i1dj8")
+CardContainer = NodePath("CardScrollContainer/CardContainer")
+QuestionPanel = NodePath("MainViewPanel/QuestionPanel")
+ResultsPanel = NodePath("MainViewPanel/ResultsPanel")
+
+[node name="HeaderPanel" type="Panel" parent="Screen" node_paths=PackedStringArray("TagList", "QuestionAnsweringTypeButton", "StartButton", "OptionsPanel", "RunInfoPanel", "QuestionsToAskList")]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 120.0
+script = ExtResource("2_jw32o")
+TagList = NodePath("OptionsPanel/TagHBoxContainer/TagList")
+QuestionAnsweringTypeButton = NodePath("OptionsPanel/QuestionAnsweringMethodHBoxContainer/CheckButton")
+StartButton = NodePath("OptionsPanel/Button")
+OptionsPanel = NodePath("OptionsPanel")
+RunInfoPanel = NodePath("RunInfoPanel")
+QuestionsToAskList = NodePath("OptionsPanel/QuestionCountHBoxContainer/NumQuestionsOptionsButton")
+
+[node name="OptionsPanel" type="Panel" parent="Screen/HeaderPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Screen/HeaderPanel/OptionsPanel"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 100.0
+offset_bottom = 111.0
+text = "Start"
+
+[node name="TagHBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/OptionsPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 305.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Screen/HeaderPanel/OptionsPanel/TagHBoxContainer"]
+layout_mode = 2
+text = "Question Tag"
+
+[node name="TagList" type="OptionButton" parent="Screen/HeaderPanel/OptionsPanel/TagHBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="QuestionAnsweringMethodHBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/OptionsPanel"]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 297.0
+offset_bottom = 80.0
+
+[node name="CheckButton" type="CheckButton" parent="Screen/HeaderPanel/OptionsPanel/QuestionAnsweringMethodHBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Open Questions"
+
+[node name="Label2" type="Label" parent="Screen/HeaderPanel/OptionsPanel/QuestionAnsweringMethodHBoxContainer"]
+layout_mode = 2
+text = "Multiple Choice"
+
+[node name="QuestionCountHBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/OptionsPanel"]
+layout_mode = 0
+offset_left = 315.0
+offset_right = 615.0
+offset_bottom = 40.0
+
+[node name="NumQuestionsLabel" type="Label" parent="Screen/HeaderPanel/OptionsPanel/QuestionCountHBoxContainer"]
+layout_mode = 2
+text = "Questions to ask:"
+
+[node name="NumQuestionsOptionsButton" type="OptionButton" parent="Screen/HeaderPanel/OptionsPanel/QuestionCountHBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+selected = 2
+item_count = 6
+popup/item_0/text = "5"
+popup/item_0/id = 0
+popup/item_1/text = "10"
+popup/item_1/id = 1
+popup/item_2/text = "20"
+popup/item_2/id = 2
+popup/item_3/text = "50"
+popup/item_3/id = 3
+popup/item_4/text = "100"
+popup/item_4/id = 4
+popup/item_5/text = "Endless"
+popup/item_5/id = 5
+
+[node name="RunInfoPanel" type="Panel" parent="Screen/HeaderPanel" node_paths=PackedStringArray("SelectedTagTextLabel", "CorrectQuestionsLabel", "TotalQuestionsLabel", "QuestionsToAskNumberLabel", "FinishRunEarlyButton")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_50glp")
+SelectedTagTextLabel = NodePath("TagHBoxContainer/SelectedTagTextLabel")
+CorrectQuestionsLabel = NodePath("ScoreHBoxContainer/CorrectQuestionsLabel")
+TotalQuestionsLabel = NodePath("ScoreHBoxContainer/TotalQuestionsLabel")
+QuestionsToAskNumberLabel = NodePath("HBoxContainer/QuestionsToAskNumberLabel")
+FinishRunEarlyButton = NodePath("FinishRunEarlyButton")
+
+[node name="TagHBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/RunInfoPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 305.0
+offset_bottom = 40.0
+
+[node name="SelectedTagLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/TagHBoxContainer"]
+layout_mode = 2
+text = "Selected Tag:"
+
+[node name="SelectedTagTextLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/TagHBoxContainer"]
+layout_mode = 2
+
+[node name="ScoreHBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/RunInfoPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 305.0
+offset_bottom = 80.0
+
+[node name="ScoreProgress" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/ScoreHBoxContainer"]
+layout_mode = 2
+text = "Score:"
+
+[node name="CorrectQuestionsLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/ScoreHBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/ScoreHBoxContainer"]
+layout_mode = 2
+text = "/"
+
+[node name="TotalQuestionsLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/ScoreHBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/HeaderPanel/RunInfoPanel"]
+layout_mode = 0
+offset_left = 310.0
+offset_right = 510.0
+offset_bottom = 40.0
+
+[node name="QuestionsToAskLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/HBoxContainer"]
+layout_mode = 2
+text = "Questions to ask:"
+
+[node name="QuestionsToAskNumberLabel" type="Label" parent="Screen/HeaderPanel/RunInfoPanel/HBoxContainer"]
+layout_mode = 2
+
+[node name="FinishRunEarlyButton" type="Button" parent="Screen/HeaderPanel/RunInfoPanel"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 300.0
+offset_bottom = 111.0
+text = "Finish Run Early"
+
+[node name="CardScrollContainer" type="ScrollContainer" parent="Screen"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 120.0
+offset_right = 200.0
+grow_vertical = 2
+
+[node name="CardContainer" type="VBoxContainer" parent="Screen/CardScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_rgh2o")
+MonsterCardScene = ExtResource("1_fkxdt")
+SpellTrapCardScene = ExtResource("4_v1gob")
+
+[node name="MainViewPanel" type="Panel" parent="Screen" node_paths=PackedStringArray("QuestionPanel", "ResultsPanel")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 120.0
+offset_right = 1080.0
+offset_bottom = 720.0
+script = ExtResource("7_bmxlf")
+QuestionPanel = NodePath("QuestionPanel")
+ResultsPanel = NodePath("ResultsPanel")
+
+[node name="QuestionPanel" type="Panel" parent="Screen/MainViewPanel" node_paths=PackedStringArray("QuestionTitleLabel", "QuestionPromptLabel", "QuestionAnswerContainer", "ReasonLabel", "TextInput", "SubmitButton")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_kln2b")
+QuestionTitleLabel = NodePath("VBoxContainer/QuestionTitleLabel")
+QuestionPromptLabel = NodePath("VBoxContainer/QuestionPromptLabel")
+QuestionAnswerPanelScene = ExtResource("4_rgh2o")
+QuestionAnswerContainer = NodePath("VBoxContainer/QuestionAnswerContainer")
+ReasonLabel = NodePath("VBoxContainer/ReasonLabel")
+TextInput = NodePath("VBoxContainer/TextInput")
+SubmitButton = NodePath("VBoxContainer/SubmitAnswerButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Screen/MainViewPanel/QuestionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestionTitleLabel" type="Label" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Question"
+horizontal_alignment = 1
+
+[node name="QuestionPromptLabel" type="Label" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="QuestionAnswerContainer" type="VBoxContainer" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="ReasonLabel" type="Label" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="TextInput" type="TextEdit" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+placeholder_text = "Enter your answer here"
+context_menu_enabled = false
+emoji_menu_enabled = false
+
+[node name="SubmitAnswerButton" type="Button" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
+layout_mode = 2
+text = "Submit"
+
+[node name="ResultsPanel" type="Panel" parent="Screen/MainViewPanel" node_paths=PackedStringArray("QuestionContainer", "CorrectQuestionsLabel", "TotalQuestionsLabel", "ScoreLabel")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_4kpch")
+QuestionContainer = NodePath("QuestionsScrollContainer/QuestionContainer")
+QuestionResultScene = ExtResource("11_4kpch")
+CorrectQuestionsLabel = NodePath("ResultsHeaderPanel/HBoxContainer/CorrectQuestionsLabel")
+TotalQuestionsLabel = NodePath("ResultsHeaderPanel/HBoxContainer/TotalQuestionsLabel")
+ScoreLabel = NodePath("ResultsHeaderPanel/HBoxContainer2/ScoreLabel")
+
+[node name="ResultsHeaderPanel" type="Panel" parent="Screen/MainViewPanel/ResultsPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 120.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 188.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer"]
+layout_mode = 2
+text = "Correct Questions:"
+
+[node name="CorrectQuestionsLabel" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer"]
+layout_mode = 2
+text = "/"
+
+[node name="TotalQuestionsLabel" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 45.0
+offset_bottom = 80.0
+
+[node name="Label" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer2"]
+layout_mode = 2
+text = "Score"
+
+[node name="ScoreLabel" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer2"]
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="Screen/MainViewPanel/ResultsPanel/ResultsHeaderPanel/HBoxContainer2"]
+layout_mode = 2
+text = "%"
+
+[node name="QuestionsScrollContainer" type="ScrollContainer" parent="Screen/MainViewPanel/ResultsPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -480.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="QuestionContainer" type="VBoxContainer" parent="Screen/MainViewPanel/ResultsPanel/QuestionsScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

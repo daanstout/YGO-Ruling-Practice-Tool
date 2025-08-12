@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://egjo2t5brhal"]
+
+[ext_resource type="Script" uid="uid://dkitq7p25gu8v" path="res://Scripts/UI/EffectPanel.cs" id="1_1ukjj"]
+[ext_resource type="LabelSettings" uid="uid://dkbut5n15sp2x" path="res://SettingObjects/DefaultLabelSettings.tres" id="1_y85ju"]
+
+[node name="HBoxContainer" type="HBoxContainer" node_paths=PackedStringArray("EffectLabel")]
+script = ExtResource("1_1ukjj")
+EffectLabel = NodePath("EffectLabel2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+text = "-"
+label_settings = ExtResource("1_y85ju")
+
+[node name="EffectLabel2" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 10
+text = "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
