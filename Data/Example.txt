@@ -9,6 +9,7 @@
     "tags":[],
     "problem_type": "",
     "prompt": "prompt",
+    "difficulty": "basic",
     "answers": [
         {
             "answer_identifier": "id 1",

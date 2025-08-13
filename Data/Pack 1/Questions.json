@@ -1,7 +1,7 @@
 [
     {
-        "question_identifier": "daan:pack1:mitsurugi_trigger2",
-        "title": "Mitsurugi and Droll & Lock Bird 2",
+        "question_identifier": "daan:pack1:mitsurugi_trigger",
+        "title": "Mitsurugi and Droll & Lock Bird",
         "cards_used": [
             19899073,
             94145021,
@@ -9,92 +9,23 @@
         ],
         "tags": [],
         "problem_type": "Effect Sequencing",
+        "difficulty": "basic",
         "prompt": "{PLAYER_1} uses {Mitsurugi Prayers}, tributing their face-up {Ame no Murakumo no Mitsurugi}. During resolution of {Mitsurugi Prayers}, {PLAYER_1} adds a \"Mitsurugi\" monster from their deck to their hand, then special summons that monster. After the chain resolves, {PLAYER_1} activates {Ame no Murakumo no Mitsurugi}'s trigger effect. {PLAYER_2} chains {Droll & Lock Bird} to this. How does the chain resolve?",
         "answers": [
             {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:1",
+                "answer_id": "daan:pack1:mitsurugi_trigger:1",
                 "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} tries to resolve, but due to {Droll & Lock Bird}, it cannot add a \"Mitsurugi\" card from the deck to the hand, and thus cannot Special Summon itself.",
                 "is_correct": true,
                 "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
             },
             {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:2",
+                "answer_id": "daan:pack1:mitsurugi_trigger:2",
                 "prompt": "{Droll & Lock Bird} was not legal to play, since the last thing that happened was the special summoning of a monster, not adding a card from the Main Deck to the hand.",
                 "is_correct": false,
                 "reasoning": "{Droll & Lock Bird} uses the [if] keyword, meaning that the trigger doesn't have to be the last thing that happened in order for {Droll & Lock Bird} to be a legal play. As long as this is the first chain that is build after the trigger, {Droll & Lock Bird}'s effect is legal to activate."
             },
             {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:3",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} cannot add a card from the Main Deck to the hand, but it can still Special Summon itself.",
-                "is_correct": false,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
-            }
-        ],
-        "added_by": "Daan Stout",
-        "author": "Daan Stout",
-        "source": "Daan Stout"
-    },
-    {
-        "question_identifier": "daan:pack1:mitsurugi_trigger3",
-        "title": "Mitsurugi and Droll & Lock Bird 3",
-        "cards_used": [
-            19899073,
-            94145021,
-            45171524
-        ],
-        "tags": [],
-        "problem_type": "Effect Sequencing",
-        "prompt": "{PLAYER_1} uses {Mitsurugi Prayers}, tributing their face-up {Ame no Murakumo no Mitsurugi}. During resolution of {Mitsurugi Prayers}, {PLAYER_1} adds a \"Mitsurugi\" monster from their deck to their hand, then special summons that monster. After the chain resolves, {PLAYER_1} activates {Ame no Murakumo no Mitsurugi}'s trigger effect. {PLAYER_2} chains {Droll & Lock Bird} to this. How does the chain resolve?",
-        "answers": [
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:1",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} tries to resolve, but due to {Droll & Lock Bird}, it cannot add a \"Mitsurugi\" card from the deck to the hand, and thus cannot Special Summon itself.",
-                "is_correct": true,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
-            },
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:2",
-                "prompt": "{Droll & Lock Bird} was not legal to play, since the last thing that happened was the special summoning of a monster, not adding a card from the Main Deck to the hand.",
-                "is_correct": false,
-                "reasoning": "{Droll & Lock Bird} uses the [if] keyword, meaning that the trigger doesn't have to be the last thing that happened in order for {Droll & Lock Bird} to be a legal play. As long as this is the first chain that is build after the trigger, {Droll & Lock Bird}'s effect is legal to activate."
-            },
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:3",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} cannot add a card from the Main Deck to the hand, but it can still Special Summon itself.",
-                "is_correct": false,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
-            }
-        ],
-        "added_by": "Daan Stout",
-        "author": "Daan Stout",
-        "source": "Daan Stout"
-    },
-    {
-        "question_identifier": "daan:pack1:mitsurugi_trigger4",
-        "title": "Mitsurugi and Droll & Lock Bird 4",
-        "cards_used": [
-            19899073,
-            94145021,
-            45171524
-        ],
-        "tags": [],
-        "problem_type": "Effect Sequencing",
-        "prompt": "{PLAYER_1} uses {Mitsurugi Prayers}, tributing their face-up {Ame no Murakumo no Mitsurugi}. During resolution of {Mitsurugi Prayers}, {PLAYER_1} adds a \"Mitsurugi\" monster from their deck to their hand, then special summons that monster. After the chain resolves, {PLAYER_1} activates {Ame no Murakumo no Mitsurugi}'s trigger effect. {PLAYER_2} chains {Droll & Lock Bird} to this. How does the chain resolve?",
-        "answers": [
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:1",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} tries to resolve, but due to {Droll & Lock Bird}, it cannot add a \"Mitsurugi\" card from the deck to the hand, and thus cannot Special Summon itself.",
-                "is_correct": true,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
-            },
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:2",
-                "prompt": "{Droll & Lock Bird} was not legal to play, since the last thing that happened was the special summoning of a monster, not adding a card from the Main Deck to the hand.",
-                "is_correct": false,
-                "reasoning": "{Droll & Lock Bird} uses the [if] keyword, meaning that the trigger doesn't have to be the last thing that happened in order for {Droll & Lock Bird} to be a legal play. As long as this is the first chain that is build after the trigger, {Droll & Lock Bird}'s effect is legal to activate."
-            },
-            {
-                "answer_identifier": "daan:pack1:mitsurugi_trigger:3",
+                "answer_id": "daan:pack1:mitsurugi_trigger:3",
                 "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} cannot add a card from the Main Deck to the hand, but it can still Special Summon itself.",
                 "is_correct": false,
                 "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."

@@ -10,16 +10,17 @@
             "Penalty"
         ],
         "problem_type": "Penalty",
+        "difficulty": "basic",
         "prompt": "{PLAYER_1} activates {Pot of Extravagance} at the start of their turn and resolves it. Later, try to activate {Pot of Desires} and banishes 10 cards from the top of their deck. Is it reasonable for {PLAYER_2} to call a judge here?",
         "answers": [
             {
-                "answer_identifier": "daan:penalty1:appropriateness1:1",
+                "answer_id": "daan:penalty1:appropriateness1:1",
                 "prompt": "Yes, it is reasonable here. Since a card was illegally activated and a cost was paid to do so, a judge can help with repairing the game state. {PLAYER_1} should receive a PE-Minor warning.",
                 "is_correct": true,
                 "reasoning": "The judge can help ensure the cards are returned to the top of the deck in the propper order."
             },
             {
-                "answer_identifier": "daan:penalty1:appropriateness1:2",
+                "answer_id": "daan:penalty1:appropriateness1:2",
                 "prompt": "No, since this is easy to resolve by the players, a judge shouldn't be called here. The player that activated the {Pot of Desires} returns the cards to the top of their deck and communicates with their opponent that it happens correctly.",
                 "is_correct": false,
                 "reasoning": "While this is a way to solve it, that doesn't mean a judge cannot be called. The judge can be an impartial party to ensure everything happens smoothly, and repairing game states is part of their job. A judge definitely can be called here."
@@ -39,16 +40,17 @@
             "Game State"
         ],
         "problem_type": "Game State Repairability",
+        "difficulty": "basic",
         "prompt": "{PLAYER_1} returns 2 face-up \"Gladiator Beast\" monsters and a face-down monster to their deck and fusion summons {Gladiator Beast Heraklinos}, but doesn't show what the face-down monster was. A judge is called. Is this game state repairable?",
         "answers": [
             {
-                "answer_identifier": "daan:penalty1:game_state_repairability1:1",
+                "answer_id": "daan:penalty1:game_state_repairability1:1",
                 "prompt": "No, this game state is irrepairable. Since all monsters have been returned to the deck, {PLAYER_1} cannot prove the face-down monster was a valid material for {Gladiator Beast Heraklinos}. The judge should explain this to the duelists and give {PLAYER_1} a Game Loss.",
                 "is_correct": true,
                 "reasoning": "When using hidden monsters that have a limitation to them, such as needing to be of a certain archetype, they should always be shown to the other player to ensure everything that happens is legal. Otherwise, players could return illegal materials here without penalty."
             },
             {
-                "answer_identifier": "daan:penalty1:game_state_repairability1:2",
+                "answer_id": "daan:penalty1:game_state_repairability1:2",
                 "prompt": "Yes. The judge should confirm with {PLAYER_1} that the monster was a legal material, and {PLAYER_1} should answer truthfully, since lying to a judge is against the rules. The judge should then explain that they do have to show this to the other player when performing the fusion summon, and gives {PLAYER_1} a PE-Minor warning.",
                 "is_correct": false,
                 "reasoning": "You cannot blindly believe what players tell you, and always confirm what they say. If you cannot confirm what they say is correct, you should rule accordingly, and in this case, that is giving them a Game Loss, since it cannot be confirmed that the face-down monster was legal."
@@ -66,22 +68,23 @@
             "Infractions"
         ],
         "problem_type": "Infractions",
+        "difficulty": "basic",
         "prompt": "Both duelists forget to resolve a Mandatory Effect, and the Game State is repairable by a judge. What should the judge do here?",
         "answers": [
             {
-                "answer_identifier": "daan:penalty1:mandatory_effect:1",
+                "answer_id": "daan:penalty1:mandatory_effect:1",
                 "prompt": "Since the game state is repairable, the judge should repair the game state and give each player a PE-Minor warning.",
                 "is_correct": true,
                 "reasoning": "Since the game state is repairable, a warning is all that is needed here. Since it's both players responsibility to maintain propper game state, they should both receive a warning."
             },
             {
-                "answer_identifier": "daan:penalty1:mandatory_effect:2",
+                "answer_id": "daan:penalty1:mandatory_effect:2",
                 "prompt": "Since the game state is repairable, the judge should repair the game state and give the player who's effect was forgotten a PE-Minor warning.",
                 "is_correct": false,
                 "reasoning": "While the game state is indeed repairable and a PE-Minor is the correct infraction to give, it is considered both player's responsibility to maintain the game state, both players should be given a warning."
             },
             {
-                "answer_identifier": "daan:penalty1:mandatory_effect:3",
+                "answer_id": "daan:penalty1:mandatory_effect:3",
                 "prompt": "Since the game state is repairable, the judge should repair the game state. As this ultimately doesn't impact the rest of the duel, no infraction should be given to either player.",
                 "is_correct": false,
                 "reasoning": "Since the game state wasn't propperly maintained, an infraction should always be given. In this case, both players should be given a PE-Minor warning, since it's considered both player's responsibility to maintain the game state."

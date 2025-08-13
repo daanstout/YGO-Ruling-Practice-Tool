@@ -99,3 +99,10 @@ public enum SpellTrapTypes {
     Field,
     Counter
 }
+
+public enum Difficulties {
+    None = 0,
+    Basic,
+    Intermediate,
+    Expert
+}

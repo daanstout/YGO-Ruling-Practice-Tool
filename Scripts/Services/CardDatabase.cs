@@ -37,11 +37,14 @@ public class CardDatabase {
 
             bool valid = ValidateCard(card, builder);
 
+            if (!valid) {
+                builder.AppendLine();
+                continue;
+            }
+
             GD.Print($"Loading card: {card.Name}");
             cardsByCode[card.Code] = card;
             cardsByName[card.Name] = card;
-            if (!valid)
-                builder.AppendLine();
         }
         GD.Print(builder.ToString());
     }
@@ -111,7 +114,7 @@ public class CardDatabase {
         int index = 0;
 
         foreach (var effect in cardEffects) {
-            Validate(string.IsNullOrWhiteSpace, effect.Effect, ref isValid, builder, $"Effect at index {index} has an invalid effect", code);
+            Validate(string.IsNullOrWhiteSpace, effect.Effect, ref isValid, builder, $"\tEffect at index {index} has an invalid effect", code);
             index++;
         }
     }

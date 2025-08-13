@@ -29,6 +29,11 @@ public class Question : IEquatable<Question?> {
     public required string[] Tags { get; init; }
 
     /// <summary>
+    /// The difficulty of the question.
+    /// </summary>
+    public required Difficulties Difficulty { get; init; } = Difficulties.None;
+
+    /// <summary>
     /// The question the user needs to answer.
     /// </summary>
     public required string Prompt { get; init; }

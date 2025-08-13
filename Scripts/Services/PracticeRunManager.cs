@@ -39,6 +39,11 @@ public class PracticeRunManager {
     public event Action? ContinueRunEvent;
 
     /// <summary>
+    /// An event that is fired when a question 
+    /// </summary>
+    public event Action<Question>? QuestionSelectedEvent;
+
+    /// <summary>
     /// An event that signals the run has ended.
     /// </summary>
     public event Action<RunData>? RunEndedEvent;
@@ -113,6 +118,8 @@ public class PracticeRunManager {
         }
 
         currentQuestion = questions[Random.Next(0, questions.Length)];
+
+        QuestionSelectedEvent?.Invoke(currentQuestion);
 
         return currentQuestion;
     }

@@ -20,6 +20,9 @@ public partial class HeaderPanel : Panel {
     public required Button StartButton { get; set; }
 
     [Export]
+    public required Button ExportLastRunButton { get; set; }
+
+    [Export]
     public required Panel OptionsPanel { get; set; }
 
     [Export]
@@ -40,6 +43,7 @@ public partial class HeaderPanel : Panel {
         TagList.Select(0);
 
         StartButton.Pressed += OnStartButtonClickedEvent;
+        ExportLastRunButton.Pressed += OnExportLastRunButtonClicked;
     }
 
     private void OnStartButtonClickedEvent() {
@@ -65,5 +69,12 @@ public partial class HeaderPanel : Panel {
     private void OnRunEndedEvent(RunData runData) {
         OptionsPanel.Visible = true;
         RunInfoPanel.Visible = false;
+        ExportLastRunButton.Visible = true;
+        ExportLastRunButton.Disabled = false;
+    }
+
+    private void OnExportLastRunButtonClicked() {
+        PracticeRunManager.Instance.ExportRun();
+        ExportLastRunButton.Disabled = true;
     }
 }
