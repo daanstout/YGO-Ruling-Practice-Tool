@@ -57,5 +57,38 @@
         "added_by": "Daan Stout",
         "author": "Konami",
         "source": "KDE-E TCG Tournament Infractions and Penalties Policy V2.2"
+    },
+    {
+        "question_identifier": "daan:penalty1:mandatory_effect",
+        "title": "Mandatory Effects",
+        "cards_used": [],
+        "tags": [
+            "Infractions"
+        ],
+        "problem_type": "Infractions",
+        "prompt": "Both duelists forget to resolve a Mandatory Effect, and the Game State is repairable by a judge. What should the judge do here?",
+        "answers": [
+            {
+                "answer_identifier": "daan:penalty1:mandatory_effect:1",
+                "prompt": "Since the game state is repairable, the judge should repair the game state and give each player a PE-Minor warning.",
+                "is_correct": true,
+                "reasoning": "Since the game state is repairable, a warning is all that is needed here. Since it's both players responsibility to maintain propper game state, they should both receive a warning."
+            },
+            {
+                "answer_identifier": "daan:penalty1:mandatory_effect:2",
+                "prompt": "Since the game state is repairable, the judge should repair the game state and give the player who's effect was forgotten a PE-Minor warning.",
+                "is_correct": false,
+                "reasoning": "While the game state is indeed repairable and a PE-Minor is the correct infraction to give, it is considered both player's responsibility to maintain the game state, both players should be given a warning."
+            },
+            {
+                "answer_identifier": "daan:penalty1:mandatory_effect:3",
+                "prompt": "Since the game state is repairable, the judge should repair the game state. As this ultimately doesn't impact the rest of the duel, no infraction should be given to either player.",
+                "is_correct": false,
+                "reasoning": "Since the game state wasn't propperly maintained, an infraction should always be given. In this case, both players should be given a PE-Minor warning, since it's considered both player's responsibility to maintain the game state."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Konami",
+        "source": "KDE-E TCG Tournament Infractions and Penalties Policy V2.2"
     }
 ]

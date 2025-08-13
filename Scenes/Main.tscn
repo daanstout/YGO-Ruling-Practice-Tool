@@ -254,11 +254,12 @@ layout_mode = 2
 autowrap_mode = 2
 
 [node name="TextInput" type="TextEdit" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 placeholder_text = "Enter your answer here"
 context_menu_enabled = false
 emoji_menu_enabled = false
+wrap_mode = 1
 
 [node name="SubmitAnswerButton" type="Button" parent="Screen/MainViewPanel/QuestionPanel/VBoxContainer"]
 layout_mode = 2

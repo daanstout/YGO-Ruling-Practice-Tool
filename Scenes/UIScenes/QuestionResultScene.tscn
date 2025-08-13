@@ -18,7 +18,7 @@ CorrectAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/CorrectVBoxC
 IncorrectAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer")
 CorrectAnswersForQuestionVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer/CorrectAnswersVBoxContainer")
 UserSubmittedAnswersVBoxContainer = NodePath("VBoxContainer/VBoxContainer/IncorrectVBoxContainer/UserSubmittedAnswersVBoxContainer")
-UserSubmittedAnswerLabel = NodePath("VBoxContainer/VBoxContainer/UserSubmittedAnswerLabel")
+UserSubmittedAnswerLabel = NodePath("VBoxContainer/VBoxContainer/UserSubmittedLine/UserSubmittedAnswerLabel")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -51,7 +51,7 @@ size_flags_horizontal = 4
 layout_mode = 2
 
 [node name="QuestionPrompt" type="Label" parent="VBoxContainer/VBoxContainer/QuestionPromptLine"]
-custom_minimum_size = Vector2(75, 0)
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 text = "Prompt"
@@ -84,7 +84,18 @@ text = "Submitted"
 [node name="UserSubmittedAnswersVBoxContainer" type="VBoxContainer" parent="VBoxContainer/VBoxContainer/IncorrectVBoxContainer"]
 layout_mode = 2
 
-[node name="UserSubmittedAnswerLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+[node name="UserSubmittedLine" type="HBoxContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer/UserSubmittedLine"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Submitted Answer"
+label_settings = ExtResource("3_jmsjr")
+
+[node name="UserSubmittedAnswerLabel" type="Label" parent="VBoxContainer/VBoxContainer/UserSubmittedLine"]
 custom_minimum_size = Vector2(0, 23)
 layout_mode = 2
+size_flags_horizontal = 3
+label_settings = ExtResource("3_jmsjr")
 autowrap_mode = 2

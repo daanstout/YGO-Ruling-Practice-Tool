@@ -35,11 +35,12 @@ public partial class PracticeTool : Panel {
 
     private static void ImportFiles() {
         Queue<DirectoryInfo> directories = [];
-        string documentsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-        string path = Path.Combine(documentsFolder, "Ruling Practice Tool");
+        //string documentsFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+        //string path = Path.Combine(documentsFolder, "Ruling Practice Tool");
 
         //string path = Path.Combine(Path.GetDirectoryName(System.Environment.ProcessPath)!, "Data");
-        //GD.Print(path);
+        string path = "Data";
+        GD.Print(path);
         directories.Enqueue(new DirectoryInfo(path));
 
         do {

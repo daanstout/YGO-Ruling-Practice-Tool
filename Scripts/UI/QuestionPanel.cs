@@ -113,6 +113,11 @@ public partial class QuestionPanel : Panel {
 
             var result = PracticeRunManager.Instance.SubmitAnswer(submittedAnswers, TextInput.Text);
 
+            if (PracticeRunManager.Instance.RunData.OpenQuestions) {
+                PracticeRunManager.Instance.ContinueRun();
+                return;
+            }
+
             StringBuilder builder = new StringBuilder();
 
             builder.AppendLine(result!.IsCorrect ? "Correct" : "Wrong");
