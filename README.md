@@ -44,6 +44,6 @@ A run can be saved to the `History` folder sitting at the root of the applicatio
 
 ## Running the Practice Tool
 
-Running the practice tool can be done by simply downloading the zip file and unpacking it. It is possible that Windows will say that the app is from an untrusted source. This pop-up can be bypassed by simply clicking on "More Information", after which a "Run Anyway" button will be shown. Of course, if you are uncomfortable with running such software, it is safest to simply not run it at all.
+Running the practice tool can be done by simply downloading the zip file and unpacking it.
 
 Alternatively, you can also download [Godot](https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_mono_win64.zip), download the source code from here (this is also included in the release, but not within the actual zip file), and open the folder with Godot. Then, you should be able to run the program by pressing the play button in the top right. You might need to download the [.Net 9 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0) to be able to run it.
