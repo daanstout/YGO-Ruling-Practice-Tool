@@ -6,15 +6,15 @@ This is a tool I made to practice Yu-Gi-Oh rulings with. It is currently still a
 
 When you start the app, you will be able to set some settings, such as the type of questions you want to be asked and how many, and start a run.
 
-![Main Screen](.docs/MainScreen.png)
+![Main Screen](.docs/Images/MainScreen.png)
 
 When a run is started, you will be shown a question, with the cards relevant to the question on the left. This allows you to read the cards and come to the right solution. The answer can then be either chosen from a list of possible answers, or entered as a custom answer, depending on whether the questions are open or multiple choice.
 
-![Question](.docs/Question.png)
+![Question](.docs/Images/Question.png)
 
 When a run is completed, an overview of the questions that have been asked will be shown, where the user can review the questions again.
 
-![Result Screen](.docs/ResultScreen.png)
+![Result Screen](.docs/Images/ResultScreen.png)
 
 ## Options before starting a run
 

@@ -1,9 +1,7 @@
 ﻿using Godot;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using YGORulingPracticeTool.Scripts.Models;
 using YGORulingPracticeTool.Scripts.Services;
 
@@ -60,7 +58,7 @@ public partial class QuestionPanel : Panel {
         answerPanels.Clear();
 
         QuestionTitleLabel.Text = question.Title;
-        QuestionPromptLabel.Text = question.Prompt;
+        QuestionPromptLabel.Text = question.Prompt.ReplaceNames(question.NamesUsed);
 
         ButtonGroup? buttonGroup = question.IsMultipleChoice switch {
             true => null,
@@ -84,7 +82,7 @@ public partial class QuestionPanel : Panel {
             for (int i = 0; i < questionOrder.Count; i++) {
                 var questionAnswerScene = QuestionAnswerPanelScene.Instantiate<QuestionAnswerPanel>();
                 answerPanels.Add(questionAnswerScene);
-                questionAnswerScene.SetAnswer(question.Answers[questionOrder[i]], buttonGroup);
+                questionAnswerScene.SetAnswer(question.Answers[questionOrder[i]], question.NamesUsed, buttonGroup);
                 QuestionAnswerContainer.AddChild(questionAnswerScene);
             }
         }

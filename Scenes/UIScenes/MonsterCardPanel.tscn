@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bvvmdputk5wlt" path="res://Scripts/UI/AutoSizedLabel.gd" id="4_nivdl"]
 
 [node name="MonsterCardPanel" type="PanelContainer" node_paths=PackedStringArray("CardNameLabel", "CardLevelLabel", "AttributeLabel", "TypeLabel", "ModifierLabel", "AttackLabel", "DefenseLabel", "EffectParent")]
-offset_right = 200.0
+offset_right = 190.0
 offset_bottom = 200.0
 script = ExtResource("1_trfpf")
 CardNameLabel = NodePath("VBoxContainer/NameRow/CardNameLabel")

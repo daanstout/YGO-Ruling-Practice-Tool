@@ -85,7 +85,7 @@ public class CardDatabase {
             Validate(attribute => attribute == Attributes.None, card.Attribute, ref isValid, builder, "The monster's attribute is not valid", card.Code);
             Validate(type => type == Types.None, card.Type, ref isValid, builder, "The monster's type is not valid", card.Code);
             Validate(level => level < 1 || level > 12, card.Level, ref isValid, builder, "The monster's level is not valid", card.Code);
-            Validate(subType => subType == SubTypes.None, card.SubTypes, ref isValid, builder, "The monster's sub typing is not valid", card.Code);
+            Validate(subType => subType.Length == 0, card.SubTypes, ref isValid, builder, "The monster's sub typing is not valid", card.Code);
         } else if (card.CardType == CardTypes.Spell || card.CardType == CardTypes.Trap) {
             Validate(spellTrapType => spellTrapType == SpellTrapTypes.None, card.SpellTrapType, ref isValid, builder, "The card's spell or trap type is not valid", card.Code);
         }

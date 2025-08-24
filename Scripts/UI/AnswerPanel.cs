@@ -1,4 +1,5 @@
 ﻿using Godot;
+using System.Collections.Generic;
 using YGORulingPracticeTool.Scripts.Models;
 
 namespace YGORulingPracticeTool.Scripts.UI;
@@ -14,20 +15,22 @@ public partial class AnswerPanel : PanelContainer {
     public required Label ReasoningLabel { get; set; }
 
     private Answer? answer;
+    private List<string>? names;
 
-    public void SetAnswer(Answer answer) {
+    public void SetAnswer(Answer answer, List<string> names) {
         this.answer = answer;
+        this.names = names;
     }
 
     public override void _Ready() {
-        if (answer == null) {
+        if (answer == null || names == null) {
             return;
         }
 
         CorrectnessLabel.Visible = !answer.IsCorrect;
 
         CorrectnessLabel.Text = answer.IsCorrect ? "Correct" : "Incorrect";
-        PromptLabel.Text = answer.Prompt;
-        ReasoningLabel.Text = answer.Reasoning;
+        PromptLabel.Text = answer.Prompt.ReplaceNames(names);
+        ReasoningLabel.Text = answer.Reasoning.ReplaceNames(names);
     }
 }

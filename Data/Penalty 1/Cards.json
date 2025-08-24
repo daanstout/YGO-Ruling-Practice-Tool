@@ -38,7 +38,10 @@
         "level": 8,
         "attack": 3000,
         "defense": 2800,
-        "sub_types": "Fusion, Effect",
+        "sub_types": [
+            "Fusion",
+            "Effect"
+        ],
         "effects": [
             {
                 "effect": "\"Gladiator Beast Laquari\" + 2 \"Gladiator Beast\" Monsters"
@@ -53,5 +56,16 @@
             }
         ],
         "code": 27346636
+    },
+    {
+        "name": "Gozen Match",
+        "card_type": "Trap",
+        "spell_trap_type": "Continuous",
+        "effects": [
+            {
+                "effect": "Each player can only control 1 Attribute of monster. Send all other face-up monsters they control to the GY."
+            }
+        ],
+        "code": 53334471
     }
 ]

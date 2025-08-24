@@ -7,7 +7,10 @@
 		"level": 8,
 		"attack": 3200,
 		"defense": 800,
-		"sub_types": "Effect, Ritual",
+		"sub_types": [
+			"Effect",
+			"Ritual"
+		],
 		"effects": [
 			{
 				"condition": "",
@@ -45,7 +48,9 @@
 		"level": 1,
 		"attack": 0,
 		"defense": 0,
-		"sub_types": "Effect",
+		"sub_types": [
+			"Effect"
+		],
 		"effects": [
 			{
 				"condition": "If a card(s) is added from the Main Deck to your opponent's hand, except during the Draw Phase (Quick Effect)",
@@ -57,7 +62,7 @@
 	},
 	{
 		"name": "Mitsurugi Prayers",
-		"card_type": "spell",
+		"card_type": "Spell",
 		"spell_trap_type": "Quick-Play",
 		"effects": [
 			{
@@ -78,79 +83,498 @@
 		"code": 45171524
 	},
 	{
-		"name": "Amo no Murakumo no Mitsurugi",
-		"card_type": "Monster",
-		"attribute": "Dark",
-		"type": "Reptile",
-		"level": 8,
-		"attack": 3200,
-		"defense": 800,
-		"sub_types": "Effect, Ritual",
+		"name": "Super Polymerization",
+		"card_type": "Spell",
+		"spell_trap_type": "Quick-Play",
 		"effects": [
 			{
-				"condition": "",
-				"activation": "",
-				"effect": "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
-			},
-			{
-				"condition": "If this card is Special Summoned",
-				"activation": "",
-				"effect": "You can destroy all monsters your opponent controls."
-			},
-			{
-				"condition": "When your opponent activates a card or effect (Quick Effect)",
-				"activation": "You can activate this effect",
-				"effect": "your opponent can discard 1 card, or that effect is negated."
-			},
-			{
-				"condition": "If this card is Tributed",
-				"activation": "",
-				"effect": "You can add 1 \"Mitsurugi\" card from your Deck to your hand, except \"Ame no Murakumo no Mitsurugi\", then you can Special Summon this card."
-			},
-			{
-				"condition": "",
-				"activation": "",
-				"effect": "You can only use each effect of \"Amo no Murakumo no Mitsurugi\" once per turn."
+				"activation": "Discard 1 card",
+				"effect": "Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters from either field as Fusion Material. Neither player can activate cards or effects in response to this card's activation."
 			}
 		],
-		"code": 19899074
+		"code": 48130397
 	},
 	{
-		"name": "Amo no Murakumo no Mitsurugi",
+		"name": "Light and Darkness Dragon",
 		"card_type": "Monster",
-		"attribute": "Dark",
-		"type": "Reptile",
+		"attribute": "Light",
+		"type": "Dragon",
 		"level": 8,
-		"attack": 3200,
-		"defense": 800,
-		"sub_types": "Effect, Ritual",
+		"attack": 2800,
+		"defense": 2400,
+		"sub_types": [
+			"Effect"
+		],
 		"effects": [
 			{
-				"condition": "",
-				"activation": "",
-				"effect": "You can Ritual Summon this card with \"Mitsurugi Ritual\"."
+				"effect": "Cannot be Special Summoned"
 			},
 			{
-				"condition": "If this card is Special Summoned",
-				"activation": "",
-				"effect": "You can destroy all monsters your opponent controls."
+				"effect": "While face-up on the field, this card is also DARK-Attribute"
+			},
+			{
+				"condition": "Once per chain, when a Spell/Trap Card, or monster effect, is activated (Quick Effect)",
+				"effect": "This card loses exactly 500 ATK/DEF and that activation is negated."
+			},
+			{
+				"condition": "When this card is destroyed and sentto the GY",
+				"activation": "Target 1 monster in your GY (if possible)",
+				"effect": "destroy all cards you controll, also Special Summon that monster (if any)."
+			}
+		],
+		"code": 47297616
+	},
+	{
+		"name": "Zaborg the Thunder Monarch",
+		"card_type": "Monster",
+		"attribute": "Light",
+		"type": "Thunder",
+		"level": 5,
+		"attack": 2400,
+		"defense": 1000,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"condition": "If this card is Tribute Summoned",
+				"activation": "Target 1 monster on the field",
+				"effect": "destroy that target."
+			}
+		],
+		"code": 51945556
+	},
+	{
+		"name": "Dimensional Fissure",
+		"card_type": "Spell",
+		"spell_trap_type": "Continuous",
+		"effects": [
+			{
+				"effect": "Any monster sent to the GY is banished instead."
+			}
+		],
+		"code": 81674782
+	},
+	{
+		"name": "Ext Ryzeal",
+		"card_type": "Monster",
+		"attribute": "Light",
+		"type": "Pyro",
+		"level": 4,
+		"attack": 500,
+		"defense": 2000,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "You can Special Summon this card (from your hand) by sending 1 Xyz Monster from your Extra Deck to the GY. If Summoned this way, you cannot Special Summon from the Extra Deck for the rest of this turn, except Rank 4 Xyz Monsters. You can only Special Summon \"Ext Ryzeal\" once per turn this way."
+			},
+			{
+				"condition": "If this card is Normal or Special Summoned and you control no other face-up monsters, except Level/Rank 4 monsters",
+				"effect": "You can add 1 FIRE Thunder monster from your Deck to your hand. You can only use this effect of \"Ext Ryzeal\" once per turn."
+			}
+		],
+		"code": 34022970
+	},
+	{
+		"name": "Node Ryzeal",
+		"card_type": "Monster",
+		"attribute": "Fire",
+		"type": "Thunder",
+		"level": 4,
+		"attack": 1400,
+		"defense": 1600,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "If you have an Xyz Monster in your field or GY, you can Special Summon this card (from your hand). If summoned this way, you cannot Special Summon from the Extra Deck for the rest of this turn, except Rank 4 Xyz Monsters. You can only Special Summon \"Node Ryzeal\" once per turn this way."
+			},
+			{
+				"activation": "You can send 1 card from your hand or field to the GY, then target 1 \"Ryzeal\" monster in your GY, except \"Node Ryzeal\"",
+				"effect": "Special Summonn it in Defense Position, but negate its effects. You can only use this effect of \"Node Ryzeal\" once per turn."
+			}
+		],
+		"code": 72238166
+	},
+	{
+		"name": "Ryzeal Detonator",
+		"card_type": "Monster",
+		"attribute": "Light",
+		"type": "Pyro",
+		"level": 4,
+		"attack": 3000,
+		"defense": 2500,
+		"sub_types": [
+			"Xyz",
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "2+ level 4 \"Ryzeal\" monsters"
 			},
 			{
 				"condition": "When your opponent activates a card or effect (Quick Effect)",
-				"activation": "You can activate this effect",
-				"effect": "your opponent can discard 1 card, or that effect is negated."
+				"activation": "You can detach 1 material from this card, then target 1 card on the field",
+				"effect": "Destroy it."
 			},
 			{
-				"condition": "If this card is Tributed",
-				"activation": "",
-				"effect": "You can add 1 \"Mitsurugi\" card from your Deck to your hand, except \"Ame no Murakumo no Mitsurugi\", then you can Special Summon this card."
+				"effect": "You can only use each of the following effects of \"Ryzeal Detonator\" once per turn."
 			},
 			{
-				"condition": "",
-				"activation": "",
-				"effect": "You can only use each effect of \"Amo no Murakumo no Mitsurugi\" once per turn."
+				"condition": "If this card is Special Summoned",
+				"effect": "You can attach 1 monster from your GY to this card as material."
+			},
+			{
+				"effect": "If an Xyz monster(s) you control would be destroyued by battle or card effect, you can detach 1 material from this card instead."
 			}
 		],
-		"code": 19899075
+		"code": 34909328
+	},
+	{
+		"name": "Horus the Black Flame Dragon LV8",
+		"card_type": "Monster",
+		"attribute": "Fire",
+		"type": "Dragon",
+		"level": 8,
+		"attack": 3000,
+		"defense": 1800,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "Cannot be Normal Summoned/Set."
+			},
+			{
+				"effect": "Must be Special Summoned by \"Horus the Black Flame Dragon LV6\", and cannot be Special Summoned by other ways."
+			},
+			{
+				"condition": "During either player's turn, when a Spell Card is activated",
+				"effect": "You can negate the activation, and if you do, destroy it. You must control this face-up card to activate and to resolve this effect."
+			}
+		],
+		"code": 48229808
+	},
+	{
+		"name": "Prohibition",
+		"card_type": "Spell",
+		"spell_trap_type": "Continuous",
+		"effects": [
+			{
+				"effect": "Activate by declaring 1 card name."
+			},
+			{
+				"effect": "Cards with that name, and their effects, cannot be used. Cards already on the field are not affected (including face-down cards)."
+			}
+		],
+		"code": 43711255
+	},
+	{
+		"name": "Fallen of Albaz",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Dragon",
+		"level": 4,
+		"attack": 1800,
+		"defense": 0,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"condition": "If this card is Normal or Special Summoned (except during the Damage Step)",
+				"activation": "You can discard 1 card",
+				"effect": "Fusion Summon 1 Fusion Monster from your Extra Deck, using monsters on either field as Fusion Material, including this card, but you cannot use other monsters you control as Fusion Material. You can only use this effect of \"Fallen of Albaz\" once per turn."
+			}
+		],
+		"code": 68468459
+	},
+	{
+		"name": "Tribute to the Doomed",
+		"card_type": "Spell",
+		"spell_trap_type": "Normal",
+		"effects": [
+			{
+				"activation": "Discard 1 card, then target 1 monster on the field",
+				"effect": "Destroy it."
+			}
+		],
+		"code": 79759861
+	},
+	{
+		"name": "Hand Destruction",
+		"card_type": "Spell",
+		"spell_trap_type": "Quick-Play",
+		"effects": [
+			{
+				"effect": "Each player sends 2 cards from their hand to the GY, then draws 2 cards."
+			}
+		],
+		"code": 74519184
+	},
+	{
+		"name": "Rush Recklessly",
+		"card_type": "Spell",
+		"spell_trap_type": "Quick-Play",
+		"effects": [
+			{
+				"activation": "Target 1 face-up monster on the field",
+				"effect": "it gains 700 ATK until the end of this turn."
+			}
+		],
+		"code": 70046172
+	},
+	{
+		"name": "Forbidden Chalice",
+		"card_type": "Spell",
+		"spell_trap_type": "Quick-Play",
+		"effects": [
+			{
+				"activation": "Target 1 face-up monster on the field",
+				"effect": "until the end of this turn, that target gains 400 ATK, but its effects are negated."
+			}
+		],
+		"code": 25789292
+	},
+	{
+		"name": "Sangan",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Fiend",
+		"level": 3,
+		"attack": 1000,
+		"defense": 600,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"condition": "If this card is sent from the field to the GY",
+				"effect": "Add 1 monster with 1500 or less ATK from your deck to your hand, but you cannot activate cards, or the effects of cards, with that name for the rest of this turn. You can only use this effect of \"Sangan\" once per turn."
+			}
+		],
+		"code": 26202165
+	},
+	{
+		"name": "Number 17: Leviathan Dragon",
+		"card_type": "Monster",
+		"attribute": "Water",
+		"type": "Dragon",
+		"level": 3,
+		"attack": 2000,
+		"defense": 0,
+		"sub_types": [
+			"Xyz",
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "Cannot attack directly unless it has material."
+			},
+			{
+				"condition": "Once per turn",
+				"activation": "You can detach 1 material from this card",
+				"effect": "it gains 500 ATK."
+			}
+		],
+		"code": 69610924
+	},
+	{
+		"name": "Number 20: Giga-Brilliant",
+		"card_type": "Monster",
+		"attribute": "Light",
+		"type": "Insect",
+		"level": 3,
+		"attack": 1800,
+		"defense": 1700,
+		"sub_types": [
+			"Xyz",
+			"Effect"
+		],
+		"effects": [
+			{
+				"condition": "Once per turn",
+				"activation": "You can detach 1 material from this card",
+				"effect": "all monsters you currently control gain 300 ATK."
+			}
+		],
+		"code": 47805931
+	},
+	{
+		"name": "Axe of Despair",
+		"card_type": "Spell",
+		"spell_trap_type": "Equip",
+		"effects": [
+			{
+				"effect": "(This card is always treated as an \"Archfiend\" card.)"
+			},
+			{
+				"effect": "The equipped monster gains 1000 ATK."
+			},
+			{
+				"condition": "When this card is sent from the field to the GY",
+				"activation": "You can Tribute 1 monster",
+				"effect": "place this card on the top of your deck."
+			}
+		],
+		"code": 40619825
+	},
+	{
+		"name": "Fire Formation - Tenki",
+		"card_type": "Spell",
+		"spell_trap_type": "Continuous",
+		"effects": [
+			{
+				"condition": "When this card is activated",
+				"effect": "You can add 1 Level 4 or lower Beast-Warrior monster from your Deck to your hand."
+			},
+			{
+				"effect": "All Beast-Warrior monsters you control gain 100 ATK."
+			},
+			{
+				"effect": "You can only activate 1 \"Fire FOrmation - Tenki\" per turn."
+			}
+		],
+		"code": 57103969
+	},
+	{
+		"name": "Primite Lordly Lode",
+		"card_type": "Spell",
+		"spell_trap_type": "Continuous",
+		"effects": [
+			{
+				"condition": "When this card is activated",
+				"effect": "Add 1 \"Primite\" card from your Deck to your hand, except \"Primite Lordly Lode\"."
+			},
+			{
+				"activation": "You can declare 1 Normal Monster Card name",
+				"effect": "Special Summon 1 declared Normal Monster from your hand, Deck, or GY in Defense Position, also you cannot activate the effects of Special Summoned monsters on the field this turn."
+			},
+			{
+				"effect": "You can only use each effect of \"Primite Lordly Lode\" once per turn."
+			},
+			{
+				"effect": "Normal Monsters and \"Primite\" monsters you control gain 300 ATK for each Normal Monster with different names in your GY."
+			}
+		],
+		"code": 56506740
+	},
+	{
+		"name": "Primite Dragon Ether Beryl",
+		"card_type": "Monster",
+		"attribute": "Earth",
+		"type": "Dragon",
+		"level": 4,
+		"attack": 1600,
+		"defense": 0,
+		"sub_types": [
+			"Effect"
+		],
+		"effects": [
+			{
+				"activation": "If this card is Normal Summoned",
+				"effect": "You can Set 1 \"Primite\" Spell/Trap from your Deck."
+			},
+			{
+				"effect": "You can only use each of the following effects of \"Primite Dragon Ether Beryl\" once per turn."
+			},
+			{
+				"activation": "You can Tribute this card",
+				"effect": "Send 1 Normal Monster from your Deck to the GY."
+			},
+			{
+				"condition": "During your Standby Phase, if you have a Normal Monster in your field or GY",
+				"effect": "You can add this card from the GY to your hand."
+			}
+		],
+		"code": 63198739
+	},
+	{
+		"name": "Banner of Courage",
+		"card_type": "Spell",
+		"spell_trap_type": "Continuous",
+		"effects": [
+			{
+				"effect": "All monsters you control gain 200 ATK during your Battle Phase only."
+			}
+		],
+		"code": 10012614
+	},
+	{
+		"name": "Blackwing - Gale the Whirlwind",
+		"card_type": "Monster",
+		"attribute": "Dark",
+		"type": "Winged Beast",
+		"level": 3,
+		"attack": 1300,
+		"defense": 400,
+		"sub_types": [
+			"Tuner",
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "If you control a \"Blackwing\" monster other than \"Blackwing - Gale the Whirlwind\", you can Special Summon this card (from your hand)."
+			},
+			{
+				"condition": "Once per turn",
+				"activation": "You can target 1 face-up monster your opponent controls",
+				"effect": "that target's ATK/DEF becomes half its current ATK/DEF."
+			}
+		],
+		"code": 2009101
+	},
+	{
+		"name": "Heroic Champion - Excalibur",
+		"card_type": "Monster",
+		"attribute": "Light",
+		"type": "Warrior",
+		"level": 4,
+		"attack": 2000,
+		"defense": 2000,
+		"sub_types": [
+			"Xyz",
+			"Effect"
+		],
+		"effects": [
+			{
+				"effect": "2 Level 4 Warrior monsters"
+			},
+			{
+				"condition": "Once per turn",
+				"activation": "You can detach 2 materials from this card",
+				"effect": "this card's ATK becomes double its original ATK until the end of your opponent's turn."
+			}
+		],
+		"code": 60645181
+	},
+	{
+		"name": "Megamorph",
+		"card_type": "Spell",
+		"spell_trap_type": "Equip",
+		"effects": [
+			{
+				"effect": "While your LP is lower than your opponent's, the equipped monster's ATK becomes double its original ATK. While your LP is higher, the equipped monster's ATK becomes half its original ATK."
+			}
+		],
+		"code": 22046459
+	},
+	{
+		"name": "Darkworld Shackles",
+		"card_type": "Spell",
+		"spell_trap_type": "Equip",
+		"effects": [
+			{
+				"effect": "The equipped monster cannot attack, also its ATK and DEF become 100."
+			},
+			{
+				"condition": "During each of your Standby Phases",
+				"effect": "Inflict 500 damage to the controller of the equipped monster."
+			}
+		],
+		"code": 83584898
 	}
 ]

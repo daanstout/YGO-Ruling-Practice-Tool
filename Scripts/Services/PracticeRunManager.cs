@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using YGORulingPracticeTool.Scripts.Models;
@@ -119,6 +120,8 @@ public class PracticeRunManager {
 
         currentQuestion = questions[Random.Next(0, questions.Length)];
 
+        GetNamesForQuestion(currentQuestion);
+
         QuestionSelectedEvent?.Invoke(currentQuestion);
 
         return currentQuestion;
@@ -165,5 +168,25 @@ public class PracticeRunManager {
         File.WriteAllText(path, json);
 
         RunData.HasBeenExported = true;
+    }
+
+    private void GetNamesForQuestion(Question question) {
+        bool foundPattern = true;
+        int num = 1;
+
+        List<string> unusedNames = [.. Names.NAMES];
+
+        do {
+            string pattern = $"{{PLAYER_{num}}}";
+
+            if (question.Prompt.Contains(pattern)) {
+                string name = unusedNames[Random.Next(0, unusedNames.Count)];
+                unusedNames.Remove(name);
+                question.NamesUsed.Add(name);
+                num++;
+            } else {
+                foundPattern = false;
+            }
+        } while (foundPattern);
     }
 }

@@ -1,0 +1,124 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Questions",
+    "description": "The questions that can be asked of the user",
+    "type": "array",
+    "items": {
+        "title": "The questions asked of the user.",
+        "description": "A question that can be asked of the user.",
+        "type": "object",
+        "properties": {
+            "question_identifier": {
+                "description": "The unique identifier of the question.",
+                "type": "string"
+            },
+            "title": {
+                "description": "The title of the question.",
+                "type": "string"
+            },
+            "cards_used": {
+                "description": "The cards used by the question.",
+                "type": "array",
+                "items": {
+                    "type": "number",
+                    "minimum": 1000000,
+                    "maximum": 999999990
+                },
+                "uniqueItems": true
+            },
+            "tags": {
+                "description": "Tags for the question, used for grouping similar questions together.",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "uniqueItems": true
+            },
+            "difficulty": {
+                "description": "How difficult the question is.",
+                "enum": [
+                    "Basic",
+                    "Intermediate",
+                    "Expert"
+                ]
+            },
+            "prompt": {
+                "description": "The prompt to ask the user",
+                "type": "string"
+            },
+            "answers": {
+                "description": "The answers the user can choose from, if they select Multiple Choice mode",
+                "type": "array",
+                "minItems": 2,
+                "items": {
+                    "description": "An answer that the user can choose from.",
+                    "type": "object",
+                    "properties": {
+                        "answer_id": {
+                            "description": "The unique id of the answer.",
+                            "type": "string"
+                        },
+                        "prompt": {
+                            "description": "The answer prompt.",
+                            "type": "string"
+                        },
+                        "is_correct": {
+                            "description": "Whether the answer is correct.",
+                            "type": "boolean"
+                        },
+                        "reasoning": {
+                            "description": "The reasoning behind why the answer is right or wrong.",
+                            "type": "string"
+                        }
+                    }
+                },
+                "contains": {
+                    "type": "object",
+                    "properties": {
+                        "is_correct":{
+                            "type": "boolean",
+                            "const": true
+                        }
+                    }
+                },
+                "required": [
+                    "answer_id",
+                    "prompt",
+                    "is_correct",
+                    "reasonable"
+                ]
+            },
+            "added_by": {
+                "description": "The person who added the question.",
+                "type": "string"
+            },
+            "author": {
+                "description": "The person who initially made the question.",
+                "type": "string"
+            },
+            "source": {
+                "description": "Where the question was sourced from.",
+                "type": "string"
+            },
+            "notes": {
+                "description": "Any notes added to the question. These are not shown to the user.",
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        "required": [
+            "question_identifier",
+            "title",
+            "cards_used",
+            "tags",
+            "difficulty",
+            "prompt",
+            "answers",
+            "added_by",
+            "author",
+            "source"
+        ]
+    }
+}

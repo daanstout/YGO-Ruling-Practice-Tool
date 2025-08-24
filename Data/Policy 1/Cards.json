@@ -7,7 +7,9 @@
         "level": 7,
         "attack": 2500,
         "defense": 2100,
-        "sub_types": "Normal",
+        "sub_types": [
+            "Normal"
+        ],
         "effects": [],
         "code": 46986414
     },
@@ -48,7 +50,9 @@
         "level": 6,
         "attack": 2000,
         "defense": 1700,
-        "sub_types": "Effect",
+        "sub_types": [
+            "Effect"
+        ],
         "effects": [
             {
                 "effect": "Gains 300 ATK for every \"Dark Magician\" or \"Magician of Black Chaos\" in the GYs."

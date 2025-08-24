@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using YGORulingPracticeTool.Scripts.Models;
 
 namespace YGORulingPracticeTool.Scripts.UI;
@@ -48,7 +47,7 @@ public partial class MonsterCardPanel : PanelContainer {
         CardLevelLabel.Text = card.Level.ToString();
         AttributeLabel.Text = card.Attribute.ToString();
         TypeLabel.Text = card.Type.ToString();
-        ModifierLabel.Text = card.SubTypes.ToString();
+        ModifierLabel.Text = string.Join(" / ", card.SubTypes);
         AttackLabel.Text = card.Attack.ToString();
         DefenseLabel.Text = card.Defense.ToString();
 

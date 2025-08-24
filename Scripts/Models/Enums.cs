@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization;
+﻿using System.Runtime.Serialization;
 
 namespace YGORulingPracticeTool.Scripts.Models;
 
@@ -62,27 +61,27 @@ public enum Types {
     Psychic,
     [EnumMember(Value = "Creator God")]
     CreatorGod,
-    Wyurm,
+    Wyrm,
     Cyberse
 }
 
 /// <summary>
 /// The different monster sub types possible.
 /// </summary>
-[Flags]
 public enum SubTypes {
     None = 0,
-    Normal = 1 << 0,
-    Effect = 1 << 1,
-    Ritual = 1 << 2,
-    Fusion = 1 << 3,
-    Synchro = 1 << 4,
-    Xyz = 1 << 5,
-    Pendulum = 1 << 6,
-    Link = 1 << 7,
-    Flip = 1 << 8,
-    Gemini = 1 << 9,
-    Spirit = 1 << 10
+    Normal,
+    Effect,
+    Ritual,
+    Fusion,
+    Synchro,
+    Xyz,
+    Pendulum,
+    Link,
+    Flip,
+    Gemini,
+    Spirit,
+    Tuner
 }
 
 /// <summary>

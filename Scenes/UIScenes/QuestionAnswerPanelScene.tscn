@@ -5,8 +5,8 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y65gc"]
 
 [node name="QuestionAnswerPanel" type="PanelContainer" node_paths=PackedStringArray("AnswerCheckBox", "AnswerLabel")]
-custom_minimum_size = Vector2(880, 50)
-offset_right = 880.0
+custom_minimum_size = Vector2(860, 50)
+offset_right = 860.0
 offset_bottom = 50.0
 script = ExtResource("1_y65gc")
 AnswerCheckBox = NodePath("HBoxContainer/AnswerCheckBox")

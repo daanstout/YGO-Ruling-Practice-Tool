@@ -32,7 +32,7 @@ public class Card
     /// <summary>
     /// If <see cref="CardType"/> is <see cref="CardTypes.Monster"/>, represents the monster's level.
     /// </summary>
-    [Range(1, 12)]
+    [Range(0, 12)]
     public byte Level { get; init; } = 0;
 
     /// <summary>
@@ -48,7 +48,7 @@ public class Card
     /// <summary>
     /// If <see cref="CardType"/> is <see cref="CardTypes.Monster"/>, represents the monster's sub types.
     /// </summary>
-    public SubTypes SubTypes { get; init; } = SubTypes.None;
+    public SubTypes[] SubTypes { get; init; } = [];
 
     /// <summary>
     /// If <see cref="CardType"/> is <see cref="CardTypes.Spell"/> or <see cref="CardTypes.Trap"/>, represents the card's subtype.

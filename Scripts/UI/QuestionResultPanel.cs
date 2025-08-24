@@ -52,7 +52,7 @@ public partial class QuestionResultPanel : PanelContainer {
         }
 
         QuestionTitleLabel.Text = question.Question.Title;
-        QuestionPromptLabel.Text = question.Question.Prompt;
+        QuestionPromptLabel.Text = question.Question.Prompt.ReplaceNames(question.Question.NamesUsed);
 
         if (PracticeRunManager.Instance.RunData.OpenQuestions) {
             QuestionResultLabel.Text = string.Empty;
@@ -73,7 +73,7 @@ public partial class QuestionResultPanel : PanelContainer {
 
                 foreach (var answer in question.Answers) {
                     AnswerPanel answerPanel = AnswerPackedScene.Instantiate<AnswerPanel>();
-                    answerPanel.SetAnswer(answer);
+                    answerPanel.SetAnswer(answer, question.Question.NamesUsed);
                     CorrectAnswersVBoxContainer.AddChild(answerPanel);
                 }
             } else {
@@ -92,13 +92,13 @@ public partial class QuestionResultPanel : PanelContainer {
                     }
 
                     AnswerPanel answerPanel = AnswerPackedScene.Instantiate<AnswerPanel>();
-                    answerPanel.SetAnswer(answer);
+                    answerPanel.SetAnswer(answer, question.Question.NamesUsed);
                     CorrectAnswersForQuestionVBoxContainer.AddChild(answerPanel);
                 }
 
                 foreach (var answer in question.Answers) {
                     AnswerPanel answerPanel = AnswerPackedScene.Instantiate<AnswerPanel>();
-                    answerPanel.SetAnswer(answer);
+                    answerPanel.SetAnswer(answer, question.Question.NamesUsed);
                     UserSubmittedAnswersVBoxContainer.AddChild(answerPanel);
                 }
             }

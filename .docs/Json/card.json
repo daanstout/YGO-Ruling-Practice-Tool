@@ -1,0 +1,206 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Cards",
+    "description": "The cards that are used in questions.",
+    "type": "array",
+    "items": {
+        "title": "The card",
+        "description": "A specific card.",
+        "type": "object",
+        "properties": {
+            "name": {
+                "description": "The name of the card.",
+                "type": "string"
+            },
+            "card_type": {
+                "description": "The type of card it is.",
+                "enum": [
+                    "Monster",
+                    "Spell",
+                    "Trap"
+                ]
+            },
+            "attribute": {
+                "description": "The attribute of the monster.",
+                "enum": [
+                    "Dark",
+                    "Light",
+                    "Water",
+                    "Fire",
+                    "Wind",
+                    "Earth",
+                    "Divine-Beast"
+                ]
+            },
+            "type": {
+                "description": "The type of the monster.",
+                "enum": [
+                    "Reptile",
+                    "Spellcaster",
+                    "Beast-Warrior",
+                    "Zombie",
+                    "Fiend",
+                    "Dinosaur",
+                    "Dragon",
+                    "Beast",
+                    "Illusion",
+                    "Insect",
+                    "Winged Beast",
+                    "Warrior",
+                    "Sea Serpent",
+                    "Machine",
+                    "Aqua",
+                    "Pyro",
+                    "Thunder",
+                    "Plant",
+                    "Rock",
+                    "Fairy",
+                    "Fish",
+                    "Divine-Beast",
+                    "Psychic",
+                    "Creator God",
+                    "Wyrm",
+                    "Cyberse"
+                ]
+            },
+            "level": {
+                "description": "The level, rank, or Link rating of the monster",
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 12
+            },
+            "attack": {
+                "description": "The attack of the monster.",
+                "type": "integer",
+                "minimum": 0
+            },
+            "defense": {
+                "description": "The defense of the monster.",
+                "type": "integer",
+                "minimum": 0
+            },
+            "sub_types": {
+                "description": "The sub types of the monster, such as \"Xyz\", \"Synchro\", or \"Effect\"",
+                "type": "array",
+                "items": {
+                    "enum": [
+                        "Normal",
+                        "Effect",
+                        "Ritual",
+                        "Fusion",
+                        "Synchro",
+                        "Xyz",
+                        "Pendulum",
+                        "Link",
+                        "Flip",
+                        "Gemini",
+                        "Spirit",
+                        "Tuner"
+                    ]
+                },
+                "uniqueItems": true
+            },
+            "spell_trap_type": {
+                "description": "The type of spell or trap it is.",
+                "if": {
+                    "properties": {
+                        "card_type": {
+                            "const": "Spell"
+                        }
+                    }
+                },
+                "enum": [
+                    "Normal",
+                    "Continuous",
+                    "Quick-Play",
+                    "Ritual",
+                    "Equip",
+                    "Field",
+                    "Counter"
+                ]
+            },
+            "effects": {
+                "description": "The effects of the cards.",
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "description": "An effect on the card.",
+                    "properties": {
+                        "condition": {
+                            "description": "The condition of the effect in order to be able to activate.",
+                            "type": "string"
+                        },
+                        "activation": {
+                            "description": "The things you need to do when activating the effect, such as paying for cost or indicate targets.",
+                            "type": "string"
+                        },
+                        "effect": {
+                            "description": "What happens when the effect resolves.",
+                            "type": "string"
+                        },
+                        "bullets": {
+                            "description": "Multiple effects from which can be chosen. The effects listed here will be presented with bullets in the app.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "effect"
+                    ]
+                }
+            },
+            "code": {
+                "description": "The unique code of the card.",
+                "type": "number",
+                "minimum": 1000000,
+                "maximum": 99999999
+            }
+        },
+        "required": [
+            "name",
+            "card_type",
+            "effects",
+            "code"
+        ],
+        "if": {
+            "properties": {
+                "card_type": {
+                    "const": "Monster"
+                }
+            }
+        },
+        "then": {
+            "required": [
+                "attribute",
+                "type",
+                "level",
+                "attack",
+                "defense",
+                "sub_types"
+            ],
+            "not": {
+                "required": [
+                    "spell_trap_type"
+                ]
+            }
+        },
+        "else": {
+            "required": [
+                "spell_trap_type"
+            ],
+            "not": {
+                "required": [
+                    "attribute",
+                    "type",
+                    "level",
+                    "attack",
+                    "defense",
+                    "sub_types"
+                ]
+            }
+        },
+        "additionalProperties": false
+    }
+}

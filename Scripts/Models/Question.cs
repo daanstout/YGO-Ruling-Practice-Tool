@@ -59,6 +59,11 @@ public class Question : IEquatable<Question?> {
     public required string Source { get; init; }
 
     /// <summary>
+    /// The names used with this question.
+    /// </summary>
+    public List<string> NamesUsed { get; init; } = [];
+
+    /// <summary>
     /// Whether the question contains multiple correct answers or not.
     /// </summary>
     public bool IsMultipleChoice => Answers.Count(answer => answer.IsCorrect) > 1;

@@ -8,31 +8,578 @@
             45171524
         ],
         "tags": [],
-        "problem_type": "Effect Sequencing",
-        "difficulty": "basic",
-        "prompt": "{PLAYER_1} uses {Mitsurugi Prayers}, tributing their face-up {Ame no Murakumo no Mitsurugi}. During resolution of {Mitsurugi Prayers}, {PLAYER_1} adds a \"Mitsurugi\" monster from their deck to their hand, then special summons that monster. After the chain resolves, {PLAYER_1} activates {Ame no Murakumo no Mitsurugi}'s trigger effect. {PLAYER_2} chains {Droll & Lock Bird} to this. How does the chain resolve?",
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} uses Mitsurugi Prayers, tributing their face-up Ame no Murakumo no Mitsurugi. During resolution of Mitsurugi Prayers, {PLAYER_1} adds a \"Mitsurugi\" monster from their deck to their hand, then special summons that monster. After the chain resolves, {PLAYER_1} activates Ame no Murakumo no Mitsurugi's trigger effect. {PLAYER_2} chains Droll & Lock Bird to this. How does the chain resolve?",
         "answers": [
             {
                 "answer_id": "daan:pack1:mitsurugi_trigger:1",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} tries to resolve, but due to {Droll & Lock Bird}, it cannot add a \"Mitsurugi\" card from the deck to the hand, and thus cannot Special Summon itself.",
+                "prompt": "Droll & Lock Bird resolves. Ame no Murakumo no Mitsurugi tries to resolve, but due to Droll & Lock Bird, it cannot add a \"Mitsurugi\" card from the deck to the hand, and thus cannot Special Summon itself.",
                 "is_correct": true,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
+                "reasoning": "Ame no Murakumo no Mitsurugi's trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
             },
             {
                 "answer_id": "daan:pack1:mitsurugi_trigger:2",
-                "prompt": "{Droll & Lock Bird} was not legal to play, since the last thing that happened was the special summoning of a monster, not adding a card from the Main Deck to the hand.",
+                "prompt": "Droll & Lock Bird was not legal to play, since the last thing that happened was the special summoning of a monster, not adding a card from the Main Deck to the hand.",
                 "is_correct": false,
-                "reasoning": "{Droll & Lock Bird} uses the [if] keyword, meaning that the trigger doesn't have to be the last thing that happened in order for {Droll & Lock Bird} to be a legal play. As long as this is the first chain that is build after the trigger, {Droll & Lock Bird}'s effect is legal to activate."
+                "reasoning": "Droll & Lock Bird uses the [if] keyword, meaning that the trigger doesn't have to be the last thing that happened in order for Droll & Lock Bird to be a legal play. As long as this is the first chain that is build after the trigger, Droll & Lock Bird's effect is legal to activate. Ame no Murakumo no Mitsurugi cannot add a card from the deck to the hand, and thus cannot special summon itself."
             },
             {
                 "answer_id": "daan:pack1:mitsurugi_trigger:3",
-                "prompt": "{Droll & Lock Bird} resolves. {Ame no Murakumo no Mitsurugi} cannot add a card from the Main Deck to the hand, but it can still Special Summon itself.",
+                "prompt": "Droll & Lock Bird resolves. Ame no Murakumo no Mitsurugi cannot add a card from the Main Deck to the hand, but it can still Special Summon itself.",
                 "is_correct": false,
-                "reasoning": "{Ame no Murakumo no Mitsurugi}'s trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
+                "reasoning": "Ame no Murakumo no Mitsurugi's trigger effect uses the [then] keyword. This means that the first part of the effect (adding a \"Mitsurugi\" card from the deck to the hand) needs to resolve in order to resolve the second part of the effect (Special Summoning itself from the GY). Since adding a card cannot be done, the Special Summoning cannot be done either."
             }
         ],
         "added_by": "Daan Stout",
         "author": "Daan Stout",
         "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:super_poly",
+        "title": "Super Polymerization and Mandatory Fast Effects",
+        "cards_used": [
+            48130397,
+            47297616,
+            51945556
+        ],
+        "tags": [],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Light and Darkness Dragon with 1800 ATK and 1400 DEF and a Zaborg the Thunder Monarch. {PLAYER_2} activates Super Polymerization and discards a card for cost. {PLAYER_1} tries to chain the negate effect of Light and Darkness Dragon, claiming that since it's mandatory, it circumvents Super Polymerization's response clause, but {PLAYER_2} says that that isn't true and Light and Darkness Dragon cannot chain its mandatory effect to Super Polymerization. Who is correct?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:super_poly:1",
+                "prompt": "{PLAYER_1} is correct.",
+                "is_correct": false,
+                "reasoning": "Even though Light and Darkness Dragon's effect is mandatory, it is still an activated effect, and Super Polymerization prevents any activated effect from responding to it in the same chain."
+            },
+            {
+                "answer_id": "daan:pack1:super_poly:2",
+                "prompt": "{PLAYER_2} is correct.",
+                "is_correct": true,
+                "reasoning": "This is correct. Super Polymerization indeed says that no card or effect can be activated in response to this card's activation. So Light and Darkness Dragon cannot chain its effect to it, even though its mandatory."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:ext_ryzeal",
+        "title": "Ext Ryzeal under Dimensional Fissure",
+        "cards_used": [
+            81674782,
+            34022970
+        ],
+        "tags": [],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} has a face-up Dimensional Fissure on their field. {PLAYER_2} tries to special summon Ext Ryzeal with its summoning condition. {PLAYER_1} tells them they cannot. Who is right?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:ext_ryzeal:1",
+                "prompt": "{PLAYER_1} is correct.",
+                "is_correct": true,
+                "reasoning": "Since Ext Ryzeal specifies that the Xyz monster needs to be send to the GY, the monster must be able to be send there. Since Dimensional Fissure instead banishes the monster, the Xyz monster cannot be send to the GY, so Ext Ryzeal cannot be Special Summoned."
+            },
+            {
+                "answer_id": "daan:pack1:ext_ryzeal:2",
+                "prompt": "{PLAYER_2} is correct.",
+                "is_correct": false,
+                "reasoning": "Since Ext Ryzeal specifies that the Xyz monster needs to be send to the GY, the monster must be able to be send there. Since Dimensional Fissure instead banishes the monster, the Xyz monster cannot be send to the GY, so Ext Ryzeal cannot be Special Summoned."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:node_ryzeal",
+        "title": "Node Ryzeal and Tokens",
+        "cards_used": [
+            72238166,
+            34022970
+        ],
+        "tags": [],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} has a face-up Node Ryzeal and a Token on their field, and Ext Ryzeal in their GY. They try to use Node Ryzeal's effect to send the Token to the GY and special Summon Ext Ryzeal. Are they allowed to do that?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:node_ryzeal:1",
+                "prompt": "Yes, they can do that.",
+                "is_correct": false,
+                "reasoning": "Since Node Ryzeal specifies the card has to be send to the GY, the card needs to be able to be send there. Tokens cannot exist outside of the field, so they cannot be send to the GY to activate cards or effects."
+            },
+            {
+                "answer_id": "daan:pack1:node_ryzeal:2",
+                "prompt": "No, they cannot do that.",
+                "is_correct": true,
+                "reasoning": "Since Node Ryzeal specifies the card has to be send to the GY, the card needs to be able to be send there. Tokens cannot exist outside of the field, so they cannot be send to the GY to activate cards or effects."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:ryzeal_detonator",
+        "title": "Ryzeal Detonator",
+        "cards_used": [
+            34909328
+        ],
+        "tags": [],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Ryzeal Detonator with 3 materials. {PLAYER_2} activates a card or effect, and {PLAYER_1} chains Detonator's effect to destroy a card on the field. In response, {PLAYER_2} chains a card or effect to that. Can {PLAYER_1} use Ryzeal Detonator's effect again in the same chain?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:ryzeal_detonator:1",
+                "prompt": "Yes, they can use the effect again this chain.",
+                "is_correct": true,
+                "reasoning": "Ryzeal Detonator's effect to destroy a card in response to an opponent's card or effect is not once per turn, so it can be used multiple times in a turn. Since it also detaches a material for cost, there is a limiting factor to how many times the effect can be used, so it can be used multiple times in the same chain."
+            },
+            {
+                "answer_id": "daan:pack1:ryzeal_detonator:2",
+                "prompt": "No, they cannot use the effect again this chain.",
+                "is_correct": false,
+                "reasoning": "Ryzeal Detonator's effect to destroy a card in response to an opponent's card or effect is not once per turn, so it can be used multiple times in a turn. Since it also detaches a material for cost, there is a limiting factor to how many times the effect can be used, so it can be used multiple times in the same chain."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:horus",
+        "title": "Horus and multiple spells",
+        "cards_used": [
+            48229808
+        ],
+        "tags": [],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Horus the Black Flame Dragon LV8. {PLAYER_2} activates a spell card, and {PLAYER_1} chains the effect of Horus the Black Flame Dragon LV8 to it. {PLAYER_2} then chains another spell card to it. Can {PLAYER_1} use Horus the Black Flame Dragon LV8's effect again in the same chain?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:horus:1",
+                "prompt": "Yes, they can use the effect again this chain.",
+                "is_correct": false,
+                "reasoning": "Horus the Black Flame Dragon LV8's effect to negate and destroy a spell card is not once per turn, so it can be used multiple times in a turn. Since it has no limiting factor to activate its effect (for example: discarding a card or tributing a monster), it cannot be used multiple times in the same chain."
+            },
+            {
+                "answer_id": "daan:pack1:horus:1",
+                "prompt": "No, they cannot use the effect again this chain.",
+                "is_correct": true,
+                "reasoning": "Horus the Black Flame Dragon LV8's effect to negate and destroy a spell card is not once per turn, so it can be used multiple times in a turn. Since it has no limiting factor to activate its effect (for example: discarding a card or tributing a monster), it cannot be used multiple times in the same chain."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:prohibition1",
+        "title": "Prohibition 1",
+        "cards_used": [
+            43711255,
+            68468459,
+            79759861
+        ],
+        "tags": [],
+        "difficulty": "Expert",
+        "prompt": "{PLAYER_1} activates Prohibition, calling Fallen of Albaz. Next turn, {PLAYER_2} activates Tribute to the Doomed, discarding a copy of Fallen of Albaz when activating it. {PLAYER_1} says that {PLAYER_2} can't do that, as Fallen of Albaz was called with Prohibition. Is {PLAYER_1} correct?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:prohibition1:1",
+                "prompt": "No, {PLAYER_1} is not correct.",
+                "is_correct": true,
+                "reasoning": "While a card called by Prohibition cannot be used when resolving effects, it can be used to discard as part of paying the cost when activating a card. So {PLAYER_2} can discard Fallen of Albaz to activate Tribute to the Doomed."
+            },
+            {
+                "answer_id": "daan:pack1:prohibition1:2",
+                "prompt": "Yes, {PLAYER_1} is correct.",
+                "is_correct": false,
+                "reasoning": "While a card called by Prohibition cannot be used when resolving effects, it can be used to discard as part of paying the cost when activating a card. So {PLAYER_2} can discard Fallen of Albaz to activate Tribute to the Doomed."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF"
+    },
+    {
+        "question_identifier": "daan:pack1:prohibition2",
+        "title": "Prohibition 2",
+        "cards_used": [
+            43711255,
+            68468459,
+            79759861
+        ],
+        "tags": [],
+        "difficulty": "Expert",
+        "prompt": "{PLAYER_1} activates Prohibition, calling Fallen of Albaz. Next turn, {PLAYER_2} activates Hand Destruction. On resolution, {PLAYER_2} discards a copy of Fallen of Albaz and one extra card. {PLAYER_1} says that {PLAYER_2} can't do that, as Fallen of Albaz was called with Prohibition. Is {PLAYER_1} correct?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:prohibition2:1",
+                "prompt": "No, {PLAYER_1} is correct.",
+                "is_correct": true,
+                "reasoning": "A card called by Prohibition cannot be used when resolving effects. Hand Destruction always sends for effect, so Fallen of Albaz cannot be send to the GY."
+            },
+            {
+                "answer_id": "daan:pack1:prohibition2:2",
+                "prompt": "Yes, {PLAYER_1} is not correct.",
+                "is_correct": false,
+                "reasoning": "A card called by Prohibition cannot be used when resolving effects. Hand Destruction always sends for effect, so Fallen of Albaz cannot be send to the GY."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF"
+    },
+    {
+        "question_identifier": "daan:pack1:lordly_lode",
+        "title": "Primite Lordly Lode",
+        "cards_used": [
+            56506740,
+            63198739,
+            34909328
+        ],
+        "tags": [],
+        "difficulty": "Expert",
+        "prompt": "{PLAYER_1} controls a face-up Ryzeal Detonator with 1 material. {PLAYER_2} activates a Primite Lordly Lode and activates its first effect. {PLAYER_1} chains the effect of Ryzeal Detonator, detaching 1 material and targetting the activates Primite Lordly Lode. {PLAYER_2} has no response, so the chain resolves and Primite Lordly Lode is destroyed and {PLAYER_2} does not search. They then activate another Primite Lordly Lode from hand. {PLAYER_1} says that they cannot do that, but {PLAYER_2} says they can, but just can't search with it. Who is correct?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:lordly_lode:1",
+                "prompt": "{PLAYER_1} is correct and the second Primite Lordly Lode cannot be activated.",
+                "is_correct": true,
+                "reasoning": "Primite Lordly Lode's effect to search on activation is mandatory, meaning that you have to use the effect when activating Primite Lordly Lode. Since Primite Lordly Lode says you can only use each effect once per turn, you can only use the search effect once per turn. Due to these 2 clauses, you can only activate 1 Primite Lordly Lode per turn."
+            },
+            {
+                "answer_id": "daan:pack1:lordly_lode:2",
+                "prompt": "{PLAYER_2} is correct and the second Primite Lordly Lode can be activated.",
+                "is_correct": false,
+                "reasoning": "Primite Lordly Lode's effect to search on activation is mandatory, meaning that you have to use the effect when activating Primite Lordly Lode. Since Primite Lordly Lode says you can only use each effect once per turn, you can only use the search effect once per turn. Due to these 2 clauses, you can only activate 1 Primite Lordly Lode per turn."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Daan Stout",
+        "source": "Daan Stout"
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification1",
+        "title": "Sangan Attack Modification",
+        "cards_used": [
+            26202165,
+            25789292,
+            70046172
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Sangan. They first activate Rush Recklessly, and then Forbidden Chalice. How much ATK does Sangan have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification1:1",
+                "prompt": "1400 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become 1000 + 400 + 700 = 2100 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification1:2",
+                "prompt": "1700 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become 1000 + 400 + 700 = 2100 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification1:3",
+                "prompt": "2100 ATK",
+                "is_correct": true,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become 1000 + 400 + 700 = 2100 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Lingering Addition/Substraction + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification2",
+        "title": "Leviathan Dragon Attack Modification",
+        "cards_used": [
+            69610924,
+            47805931
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Number 17: Leviathan Dragon and a face-up Number 20: Giga-Brilliant. They use the effect of Number 20: Giga-Brilliant, and then the effect of Number 17: Leviathan Dragon. How much attack does Number 17: Leviathan Dragon have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification2:1",
+                "prompt": "2300 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 300 + 500 = 2800 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification2:2",
+                "prompt": "2500 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 300 + 500 = 2800 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification2:3",
+                "prompt": "2800 ATK",
+                "is_correct": true,
+                "reasoning": "If a lingering addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 300 + 500 = 2800 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Lingering Addition/Substraction + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification3",
+        "title": "Leviathan Dragon and Equip Spells",
+        "cards_used": [
+            69610924,
+            40619825
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Number 17: Leviathan Dragon. They equip an Axe of Despair to Number 17: Leviathan Dragon, and then use Number 17: Leviathan Dragon's effect. How much attack does Number 17: Leviathan Dragon have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification3:1",
+                "prompt": "2500 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 1000 = 3500 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification3:2",
+                "prompt": "3000 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 1000 = 3500 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification3:3",
+                "prompt": "3500 ATK",
+                "is_correct": true,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 1000 = 3500 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Continuous Addition/Substraction + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification4",
+        "title": "Leviathan Dragon and Continuous Spells",
+        "cards_used": [
+            69610924,
+            10012614
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Number 17: Leviathan Dragon and a face-up Banner of Courage. They detach 1 material from Number 17: Leviathan Dragon and enter their battle phase. How much attack does Number 17: Leviathan Dragon have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification4:1",
+                "prompt": "2200 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 200 = 2700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification4:2",
+                "prompt": "2500 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 200 = 2700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification4:3",
+                "prompt": "2700 ATK",
+                "is_correct": true,
+                "reasoning": "If a continuous addition or substraction to a monster's ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become 2000 + 500 + 200 = 2700 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Continuous Addition/Substraction + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification5",
+        "title": "Leviathan Dragon and Gale the Whirlwind",
+        "cards_used": [
+            69610924,
+            2009101
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Number 17: Leviathan Dragon and {PLAYER_2} controls a face-up Blackwing - Gale the Whirlwind. {PLAYER_2} has activated and resolved Blackwing - Gale the Whirlwind's effect, targetting Number 17: Leviathan Dragon. In {PLAYER_1}'s turn, they activate the effect of Number 17: Leviathan Dragon. How much attack does Number 17: Leviathan Dragon have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification5:1",
+                "prompt": "1500 ATK",
+                "is_correct": true,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 500 = 1500 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification5:2",
+                "prompt": "1250 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 500 = 1500 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification5:3",
+                "prompt": "2500 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 500 = 1500 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Lingering setting ATK/DEF + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification6",
+        "title": "Gale the Whirlwind and Rush Recklessly",
+        "cards_used": [
+            2009101,
+            69610924,
+            70046172
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} controls a face-up Number 17: Leviathan Dragon with 2 materials and 2000 attack and a face-down spell/trap. {PLAYER_2} normal summons Blackwing - Gale the Whirlwind, and uses its effect on Number 17: Leviathan Dragon. They then declare an attack of Blackwing - Gale the Whirlwind against {PLAYER_1}'s weakened Number 17: Leviathan Dragon. During the before damage calculation step, {PLAYER_1} activates their face-down Rush Recklessly, targetting their Number 17: Leviathan Dragon, which resolves. How much attack does Number 17: Leviathan Dragon have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification6:1",
+                "prompt": "1700 ATK",
+                "is_correct": true,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 700 = 1700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification6:2",
+                "prompt": "1350 ATK",
+                "is_correct": false,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 700 = 1700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification6:3",
+                "prompt": "2700 ATK",
+                "is_correct": true,
+                "reasoning": "If a lingering change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Number 17: Leviathan Dragon's attack will become (2000 / 2) + 700 = 1700 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Lingering setting ATK/DEF + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification7",
+        "title": "Megamorph and Rush Recklessly",
+        "cards_used": [
+            22046459,
+            70046172,
+            26202165
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} has 4000LP and {PLAYER_2} has 8000LP. {PLAYER_1} controls a face-up Sangan equipped with Megamorph. They declare a direct attack against {PLAYER_2} and activate Rush Recklessly at the beginning of the damage step. How much attack does Sangan have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification7:1",
+                "prompt": "1700 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 * 2) + 700 = 2700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification7:2",
+                "prompt": "2000 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 * 2) + 700 = 2700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification7:3",
+                "prompt": "2700 ATK",
+                "is_correct": true,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 * 2) + 700 = 2700 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification7:4",
+                "prompt": "3400 ATK",
+                "is_correct": false,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 * 2) + 700 = 2700 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Continuous setting ATK/DEF + New Lingering Addition/Substraction"
+        ]
+    },
+    {
+        "question_identifier": "daan:pack1:attack_modification8",
+        "title": "Darkworld Shackles and Rush Recklessly",
+        "cards_used": [
+            83584898,
+            26202165,
+            70046172
+        ],
+        "tags": [
+            "Attack Modification"
+        ],
+        "difficulty": "Basic",
+        "prompt": "{PLAYER_1} has a face-up Sangan equipped with {PLAYER_2}'s Darkworld Shackles. {PLAYER_1} declares an attack with the Sangan and during the damage step activates Rush Recklessly. How much attack does Sangan have?",
+        "answers": [
+            {
+                "answer_id": "daan:pack1:attack_modification8:1",
+                "prompt": "800",
+                "is_correct": true,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 set to 100) + 700 = 800 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification8:1",
+                "prompt": "1700",
+                "is_correct": false,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 set to 100) + 700 = 800 ATK."
+            },
+            {
+                "answer_id": "daan:pack1:attack_modification8:1",
+                "prompt": "100",
+                "is_correct": false,
+                "reasoning": "If a continuous change of a monster's current ATK/DEF is being applied, and a new lingering addition or substraction of their ATK/DEF is applied to it, they are applied in sequence. So Sangan's attack will become (1000 set to 100) + 700 = 800 ATK."
+            }
+        ],
+        "added_by": "Daan Stout",
+        "author": "Philip \"pazim\" Karan",
+        "source": "Judge Resources TCG PDF",
+        "notes": [
+            "Previously applying Continuous setting ATK/DEF + New Lingering Addition/Substraction"
+        ]
     }
 ]

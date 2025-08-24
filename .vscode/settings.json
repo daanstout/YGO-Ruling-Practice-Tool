@@ -1,0 +1,16 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "Cards.json"
+            ],
+            "url": "./.docs/Json/card.json"
+        },
+        {
+            "fileMatch": [
+                "Questions.json"
+            ],
+            "url": "./.docs/Json/question.json"
+        }
+    ]
+}
